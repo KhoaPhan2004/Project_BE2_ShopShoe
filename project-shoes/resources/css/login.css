@@ -1,0 +1,12 @@
+
+.btn-green{
+    color: white;
+    background-color: #2ed078;
+    border-radius: 20px;
+}
+.btn-green:hover{
+    background-color: coral;
+}
+.forgetpassword{
+    text-align: center;
+}

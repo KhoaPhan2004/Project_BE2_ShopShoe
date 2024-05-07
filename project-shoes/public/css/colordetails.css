@@ -1,0 +1,42 @@
+.btn-color{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+.img-main{
+    height: 600px;
+    width: 100%;
+}
+.btn-color-white{
+ background: #d9d9d9;
+}
+.btn-color-white:hover{
+    background: #d9d9d9;
+}
+.btn-color-red{
+    background: red;
+}
+.btn-color-red:hover{
+    background: red;
+}
+.btn-color-green{
+    background: #2566b1;
+}
+.btn-color-green:hover{
+    background: #2566b1;
+}
+.btn-size{
+    border: 1px solid #d9d9d9;
+}
+.btn-size:hover{
+    background-color: black;
+    color: white;
+}
+.btn-buy{
+    background-color: black;
+    color: #d9d9d9;
+}
+.btn-buy:hover{
+    background-color:#d9d9d9 ;
+    border: 1px solid black;
+}
