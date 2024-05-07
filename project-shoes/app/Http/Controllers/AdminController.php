@@ -24,7 +24,7 @@ class AdminController extends Controller
 
         ]);
         $data = request()->all('email', 'password');
-        if(auth()->attempt($data)){
+        if (auth()->attempt($data)) {
             return redirect()->route('admin.index');
         }
     }
@@ -61,5 +61,47 @@ class AdminController extends Controller
 
 
         return redirect()->route('admin.login');
+    }
+    public function changePassword()
+    {
+        return view('admin.changePassword');
+    }
+    //kiểm tra
+    // public function check_changePassword(Request $request)
+    // {
+    //     $request->validate([
+    //         'email' => 'required|email', // Kiểm tra email không được rỗng và phải là email hợp lệ
+
+    //         'old_password' => 'required',
+    //         'password' => 'required|min:8',
+    //         'confirm_password' => 'required|same:password'
+    //     ]);
+
+    //     dd($request->all());
+
+    //     return redirect()->route('admin.index')->with('success', 'Mật khẩu đã được thay đổi thành công.');
+    // }
+    public function check_changePassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email', 
+            'old_password' => 'required',
+            'password' => 'required|min:8',
+            'confirm_password' => 'required|same:password'
+        ]);
+
+        // lấy thông tin
+        $user = User::where('email', $request->email)->first();
+
+        // ktra mật khẩu cũ có khớp với mật khẩu hiện tại không
+        if (!Hash::check($request->old_password, $user->password)) {
+            return redirect()->back()->with('error', 'Mật khẩu cũ không chính xác.')->withInput();
+        }
+
+      //update 
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return redirect()->route('admin.login')->with('success', 'Mật khẩu đã được thay đổi thành công.');
     }
 }

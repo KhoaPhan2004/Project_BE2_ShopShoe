@@ -31,6 +31,9 @@ Route::group(['prefix' => ''], function () {
 Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
 Route::post('/admin/login', [AdminController::class, 'check_login']);
 
+Route::get('/admin/changePassword', [AdminController::class, 'changePassword'])->name('admin.changePassword');
+Route::post('/admin/changePassword', [AdminController::class, 'check_changePassword']);
+
 
 Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.register');
 Route::post('/admin/register', [AdminController::class, 'check_register']);
