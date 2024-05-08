@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('statistics', function (Blueprint $table) {
+        Schema::create('privileges', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
-            $table->decimal('total_revenue', 10, 2);
-            $table->integer('total_quantity_sold');
+            $table->string('name',50);
+            $table->string('Url_match', 100);
+            $table->unsignedInteger('Group_id');
             $table->timestamps();
+
+            $table->foreign('Group_id')->references('id')->on('group_privileges');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('statistics');
+        Schema::dropIfExists('privileges');
     }
 };

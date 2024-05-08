@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('user_privileges', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id');
-            $table->timestamp('order_date');
-            $table->string('status', 50);
-            $table->string('address',100);
+            $table->unsignedInteger('id_manage');
+            $table->unsignedInteger('id_privileges');
             $table->timestamps();
 
-            // Foreign key constraint
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('id_manage')->references('id')->on('user_manage');
+            $table->foreign('id_privileges')->references('id')->on('privileges');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('user_privileges');
     }
 };
