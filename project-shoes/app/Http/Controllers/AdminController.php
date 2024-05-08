@@ -25,7 +25,7 @@ class AdminController extends Controller
         ]);
         $data = request()->all('email', 'password');
         if (auth()->attempt($data)) {
-            return redirect()->route('admin.index');
+            return redirect()->route('home.index');
         }
     }
 
