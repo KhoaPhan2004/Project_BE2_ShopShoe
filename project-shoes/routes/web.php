@@ -6,6 +6,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OriginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use App\Models\Brands;
 
 /*
@@ -28,12 +29,12 @@ Route::group(['prefix' => ''], function () {
 });
 
 
-Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');
-Route::post('/admin/login', [AdminController::class, 'check_login']);
+Route::get('login', [UserController::class, 'login'])->name('login');
+Route::post('login', [UserController::class, 'check_login']);
 
 
-Route::get('/admin/register', [AdminController::class, 'register'])->name('admin.register');
-Route::post('/admin/register', [AdminController::class, 'check_register']);
+Route::get('register', [UserController::class, 'register'])->name('register');
+Route::post('register', [UserController::class, 'check_register']);
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {

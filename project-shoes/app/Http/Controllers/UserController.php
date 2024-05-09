@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash; // Import Hash facade
 
 class UserController extends Controller
 {
+    public function login()
+    {
+        return view('login');
+    }
     public function check_login()
     {
         request()->validate([
@@ -14,8 +20,8 @@ class UserController extends Controller
 
         ]);
         $data = request()->all('email', 'password');
-        if(auth()->attempt($data)){
-            return redirect()->route('index');
+        if (auth()->attempt($data)) {
+            return redirect()->route('home.index');
         }
     }
 
@@ -26,20 +32,20 @@ class UserController extends Controller
     public function check_register(Request $request)
     {
         request()->validate([
-            'name' => 'required',
+            'name' => 'required|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required',
             'confirm_password' => 'required|same:password',
             'address' => 'required',
             'image_url' => 'required|nullable|image',
-
         ]);
-        $imageContent = file_get_contents($request->file('image_url')->path());
+        //kiểm tra tên tồn tại hay ko
+        $existingUser = User::where('name', $request->name)->first();
+        if ($existingUser) {
+            return redirect()->back()->withInput()->withErrors(['name' => 'Tên đã được sử dụng. Vui lòng chọn tên khác.']);
+        }
 
-        // $data = request()->all('email', 'name','address','image_url');
-        // $data['password'] = bcrypt(request('password'));
-        // dd($data);
-        // User::create($check);
+        $imageContent = file_get_contents($request->file('image_url')->path());
 
         $check = User::create([
             'name' => $request->name,
@@ -48,7 +54,6 @@ class UserController extends Controller
             'address' => $request->address,
             'image_url' => $imageContent,
         ]);
-
 
         return redirect()->route('login');
     }

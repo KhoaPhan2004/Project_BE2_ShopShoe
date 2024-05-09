@@ -9,8 +9,11 @@
 
     <!-- Bootstrap CSS -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="../../css/register.css">
-    <link rel="stylesheet" href="../../css/bootstrap.css">
+      <link href="{{ asset('css/register.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -74,7 +77,7 @@
                                     </div>
                                 </div>
                                 <div class="d-grid mx-auto">
-                                    <button type="submit" class="btn btn-primary btn-block">Đăng Ký</button>
+                                    <button type="submit" class="btn-green btn-primary btn-block">Đăng Ký</button>
                                 </div>
                                 <div class="account py-2">
                                     Bạn đã có tài khoản?
