@@ -1,30 +1,34 @@
-@extends('admin.admin')
-@section('main')
+<div class="container">
+    @extends('admin.admin')
+    @section('main')
 
-<h1>Them Brand</h1>
-<hr>
+    <div class="header">
+        <h1>Add Brand</h1>
+    </div>
+    <hr>
+    <link href="{{ asset('css/brand.css') }}" rel="stylesheet">
 
-<form action="{{ route('brand.store')}}" method="POST" role="form">
-    @csrf
-    <div class="col-md-9">
-        <div class="form-group">
-            <label for="">Ten Brand</label>
-            <input type="text" class="form-control" name="brand_name" id="" placeholder="Nhap ...">
-            <label for="">Created_at</label>
-            <!-- <input type="datetime-local" class="form-control" name="created_at" id="created_at"> -->
-            <input type="date" class="form-control" name="created_at" id="created_at">
+    <form action="{{ route('brand.store')}}" method="POST" role="form">
+        @csrf
+        <div class="col-md-5">
+            <div class="form-group">
+                <label for="">Add Brand</label>
+                <input type="text" class="form-control" name="brand_name" id="" placeholder="Nhap ...">
+
+
+            </div>
 
         </div>
 
-    </div>
 
+        <div class="col-md-7">
+            <label for="">Created_at</label>
+            <!-- <input type="datetime-local" class="form-control" name="created_at" id="created_at"> -->
+            <input type="date" class="form-control" name="created_at" id="created_at">
+        </div>
+        <button type="submit" class="btn-add btn-primary ">Submit</button>
+    </form>
 
-
-    <div class="col-md-4">
-        <button type="submit" class="btn btn-primary ">Submit</button>
-
-    </div>
-</form>
-
-
-@stop()
+    
+    @stop()
+</div>
