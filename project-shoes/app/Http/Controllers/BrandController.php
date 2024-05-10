@@ -14,7 +14,7 @@ class BrandController extends Controller
     {
         $brands = Brand::orderBy('id', 'DESC')->paginate(3);
 
-        // Kiểm tra số lượng thương hiệu
+        // ktra số lượng thương hiệu
         $brandCount = Brand::count();
 
         if ($brandCount > 0) {
@@ -39,20 +39,17 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate input
         $request->validate([
             'brand_name' => 'required|unique:brands',
             'created_at' => 'required', 
         ]);
     
-        // Lấy dữ liệu từ request
         $data = $request->only('brand_name', 'created_at');
     
-        // Tạo mới đối tượng Brand và lưu vào cơ sở dữ liệu
         Brand::create($data);
     
-        // Chuyển hướng đến trang danh sách thương hiệu sau khi tạo mới thành công
-        return redirect()->route('brand.index');
+        return redirect()->route('brand.index')->with('success', 'Thêm thành công');
+
     }
     
 
@@ -89,7 +86,9 @@ class BrandController extends Controller
     
         $brand->update($data);
     
-        return redirect()->route('brand.index');
+        return redirect()->route('brand.index')->with('success', 'Sửa thành công');
+
+        
     }
     
 
@@ -99,7 +98,7 @@ class BrandController extends Controller
     public function destroy(Brand $brand)
     {
         $brand->delete();
-        return redirect()->route('brand.index');
+        return redirect()->route('brand.index')->with('success', 'Xóa thành công');
 
 
     }
