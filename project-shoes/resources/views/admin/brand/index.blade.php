@@ -2,11 +2,17 @@
     @extends('admin.admin')
     @section('main')
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <div class="header">
         <h1>Thương Hiệu</h1>
     </div>
     <link href="{{ asset('css/brand.css') }}" rel="stylesheet">
+    @if(session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+    @endif
 
     <a href="{{ route('brand.create') }}" class="btn btn-success">Thêm</a>
     <hr>
@@ -31,8 +37,9 @@
                 <td>
                     <form action="{{ route('brand.destroy', $brand->id)}}" method="post">
                         @csrf @method('DELETE')
-                        <a href="{{ route('brand.edit',$brand->id) }}" class="btn btn-sm btn-primary">Sua</a>
-                        <button class="btn btn-sm btn-danger">Xoa</button>
+                        <a href="{{ route('brand.edit',$brand->id) }}" class="btn btn-sm btn-primary"> <i class="bi bi-pencil-fill"></i>
+                            Sua</a>
+                        <button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i>Xoa</button>
 
                     </form>
 
@@ -42,8 +49,8 @@
         </tbody>
     </table>
     <div class="pagination-container">
-    @if(session('error'))
-            <div class="alert alert-danger">{{ session('error') }}</div>
+        @if(session('error'))
+        <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
         {{$brands->links()}}
     </div>
