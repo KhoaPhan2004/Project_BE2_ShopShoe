@@ -14,15 +14,17 @@
         /* Custom CSS */
         .navbar-left {
             font-size: 20px;
-            background: linear-gradient(to right, #00d2ff, #3a7bd5);           
-             padding: 20px;
-            height: 100vh; 
+            background: linear-gradient(to right, #00d2ff, #3a7bd5);
+            padding: 20px;
+            height: 100vh;
         }
 
-    h1{
-        font-size: 50px;
-        color: red;
-    }
+        h1 {
+            font-size: 50px;
+            color: red;
+            text-align: center;
+            line-height: 100px;
+        }
 
         .navbar-left ul {
             list-style-type: none;
@@ -34,25 +36,25 @@
         }
 
         .navbar-left ul li a {
-            color: white; 
+            color: white;
             text-decoration: none;
         }
 
         .main-content {
             padding: 20px;
-            height: 100vh; 
+            height: 100vh;
             overflow-y: scroll;
         }
 
         body {
-            background-color: #f5f5f5; 
+            background-color: #f5f5f5;
         }
     </style>
 </head>
 
 <body>
     <div class="container-fluid">
-        <div class="row">    
+        <div class="row">
             <!-- Navbar bên trái -->
             <div class="col-lg-3 navbar-left">
                 <h1>Admin</h1>
@@ -69,7 +71,7 @@
                     <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Setting</a></li>
 
                 </ul>
-                
+
             </div>
 
             <div class="col-lg-9 main-content">
