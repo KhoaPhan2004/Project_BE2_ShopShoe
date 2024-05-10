@@ -45,7 +45,7 @@
                     <div class="dropdown-icon">
                         <i class="fa-solid fa-user"></i>
                         <div class="dropdown-content-icon">
-                            <a href="#"><i class="bi bi-person-circle"></i>
+                            <a href="{{ route('login') }}"><i class="bi bi-person-circle"></i>
                                 Login</a>
                             <a href="#"><i class="bi bi-box-arrow-in-right"></i>Logout</a>
                         </div>
