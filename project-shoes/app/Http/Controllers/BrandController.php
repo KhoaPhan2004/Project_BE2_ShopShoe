@@ -12,7 +12,17 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brands = Brand::orderBy('id', 'DESC')->paginate(2);
+        $brands = Brand::orderBy('id', 'DESC')->paginate(3);
+
+        // Kiểm tra số lượng thương hiệu
+        $brandCount = Brand::count();
+
+        if ($brandCount > 0) {
+            $perpage = 3;
+            $brands = Brand::paginate($perpage);
+            return view('admin.brand.index', ['brands' => $brands]);
+        }
+
         return view('admin.brand.index', compact('brands'));
     }
 
@@ -32,7 +42,7 @@ class BrandController extends Controller
         // Validate input
         $request->validate([
             'brand_name' => 'required|unique:brands',
-            'created_at' => 'required', // Sửa từ 'requied' thành 'required'
+            'created_at' => 'required', 
         ]);
     
         // Lấy dữ liệu từ request
