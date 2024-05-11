@@ -39,11 +39,12 @@ Route::post('register', [UserController::class, 'check_register']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-
+    //này là routes sort mới nhá
+    Route::get('products/sort/{order}', [ProductController::class, 'sort'])->name('products.sort');
 
     Route::resources([
-         'brand' => BrandController::class,
-         'origin' => OriginController::class,
+        'brand' => BrandController::class,
+        'origin' => OriginController::class,
         'product' => ProductController::class,
 
     ]);
