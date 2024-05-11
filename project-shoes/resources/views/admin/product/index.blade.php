@@ -5,14 +5,32 @@
 <h1>Sản Phẩm</h1>
 <a href="{{ route('product.create') }}" class="btn btn-success">Thêm</a>
 <hr>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+<link href="{{ asset('css/admin_product.css') }}" rel="stylesheet">
+
 <table class="table table-hover">
     <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>description</th>
-            <th>price</th>
-            <th>image</th>
+            <th>
+                <div class="d-flex ">
+                    <div class="dropdown">
+                        <span class="mr-2">price</span>
+                        <i class="bi bi-caret-down-fill dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('products.sort', 'desc') }}">Giảm dần</a>
+                            <a class="dropdown-item" href="{{ route('products.sort', 'asc') }}">Tăng dần</a>
+                        </div>
+
+                    </div>
+                </div>
+            </th>
+
+
+
+            <th>image </th>
             <th>brand_id</th>
             <th>origin_id</th>
             <th>size</th>
