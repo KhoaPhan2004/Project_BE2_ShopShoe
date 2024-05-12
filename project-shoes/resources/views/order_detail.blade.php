@@ -13,7 +13,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    img {
+        max-width: 100px;
+        height: auto;
+    }
+</style>
 <body>
 
     <section>
@@ -71,23 +91,26 @@
     
     <div class="about" id="About">
         <h1><span>Chi tiết đơn hàng</span></h1>
-    <table>
+        <table>
+    <thead>
         <tr>
-            <th> Tên sản phẩm </th>
-            <th> hình ảnh </th>
-            <th> Gía </th>
-            <th> Số lượn </th>
+            <th>Tên sản phẩm</th>
+            <th>Hình ảnh</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
         </tr>
+    </thead>
+    <tbody>
         @foreach ($orderDetails as $orderDetail)
         <tr>
             <td>{{ $orderDetail->product_name }}</td>
-            <td><img src="{{ asset('images/' . $orderDetail->image_url) }}" alt="Product Image" style="max-width: 100px;"></td>
-
+            <td><img src="{{ asset('images/' . $orderDetail->image_url) }}" alt="Product Image"></td>
             <td>{{ $orderDetail->price }}</td>
             <td>{{ $orderDetail->quantity }}</td>
         </tr>
         @endforeach
-    </table>
+    </tbody>
+</table>
     </div>
     <!--Footer-->
 
