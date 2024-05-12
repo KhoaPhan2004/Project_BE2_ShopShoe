@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('address', 255);
             $table->string('phone_number',20)->nullable(); 
-            $table->string('image_url',255)->nullable();//leen dataabase sua lai longBlob
+            $table->binary('image_url')->nullable(); // Sử dụng binary() thay cho longBlob()
             $table->rememberToken();
             $table->timestamps();
         });

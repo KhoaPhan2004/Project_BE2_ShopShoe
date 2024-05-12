@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->timestamp('order_date');
+            $table->datetime('order_date');
             $table->string('status', 50);
             $table->string('address',100);
+            $table->decimal('total_amount', 10, 2)->default(0.00);
             $table->timestamps();
 
             // Foreign key constraint

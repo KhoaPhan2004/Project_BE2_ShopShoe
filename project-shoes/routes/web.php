@@ -41,6 +41,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     //này là routes sort mới nhá
     Route::get('products/sort/{order}', [ProductController::class, 'sort'])->name('products.sort');
+    
+    Route::get('admin/statistics', [AdminController::class, 'statistics'])->name('admin.statistics');
 
     Route::resources([
         'brand' => BrandController::class,

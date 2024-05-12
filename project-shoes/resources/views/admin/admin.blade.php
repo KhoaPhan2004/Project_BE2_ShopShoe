@@ -67,7 +67,7 @@
                     </li>
                     <li class="nav-item mb-2"> <a href="{{ route('product.index') }}">Product</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Thống Kê</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('admin.statistics') }}" >Thống Kê</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Setting</a></li>
 
                 </ul>
