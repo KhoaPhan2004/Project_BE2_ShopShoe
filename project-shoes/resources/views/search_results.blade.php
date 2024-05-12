@@ -29,9 +29,7 @@
                     <div class="dropdown">
                         <button class="dropbtn">Brands <i class="bi bi-caret-down-fill"></i></button>
                         <div class="dropdown-content">
-                            @foreach($brands as $id => $brand)
-                            <a href="#">{{ $brand }}</a>
-                            @endforeach
+                           
                         </div>
                     </div>
 
@@ -56,7 +54,6 @@
 
             </nav>
         </header>
-<!-- search -->
         <div class="container mt-5 pt-5">
   <div class="row justify-content-center">
     <div class="col-lg-6">
@@ -67,7 +64,6 @@
     </div>
   </div>
 </div>
-
         <div class="main" id="Home">
             <div class="main_content">
                 <div class="main_text">
@@ -99,33 +95,37 @@
 
 
     <!--Products-->
-
     <div class="products" id="Products">
-        <h1>Products</h1>
+    <h1>Products</h1>
 
-        <div class="box">
+    <div class="box">
+    @if($products->count() > 0)
             @foreach($products as $product)
-            <div class="card">
-                <div class="small_card">
-                    <i class="fa-solid fa-heart"></i>
-                    <i class="fa-solid fa-share"></i>
-                </div>
-
-                <div class="image">
-                    <img src="{{ asset('images/' . $product->image_url) }}">
-                </div>
-
-                <div class="products_text">
-                    <h2>{{ $product->product_name }}</h2>
-                    <p>{{ $product->description }}</p>
-                    <h3>${{ $product->price }}</h3>
-                    <a href="#" class="btn">Add To Cart</a>
-                </div>
+        <div class="card">
+            <div class="small_card">
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-share"></i>
             </div>
-            @endforeach
-        </div>
-    </div>
 
+            <div class="image">
+                <img src="{{ asset('images/' . $product->image_url) }}">
+            </div>
+
+            <div class="products_text">
+                <h2>{{ $product->product_name }}</h2>
+                <p>{{ $product->description }}</p>
+                <h3>${{ $product->price }}</h3>
+                <a href="#" class="btn">Add To Cart</a>
+            </div>
+        </div>
+        @endforeach
+        @else
+        <div class="alert alert-warning" role="alert">
+            Không tìm thấy sản phẩm nào!
+        </div>
+        @endif
+    </div>
+</div>
 
 
 
