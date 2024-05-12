@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\OrderController;
+
 use App\Models\Brands;
 
 /*
@@ -39,6 +40,10 @@ Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'check_register']);
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+
+Route::get('/order/{id}', [OrderController::class, 'showOrderDetails']);
+
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {

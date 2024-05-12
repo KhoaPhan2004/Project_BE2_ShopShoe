@@ -16,7 +16,7 @@
                 <label for="user_id">User ID</label>
                 <input type="number" class="form-control" name="user_id" id="user_id" placeholder="Enter User ID">
             </div>
-            <div class="form-group">
+            <div class="form-group ps">
                 <label for="order_date">Order Date</label>
                 <input type="datetime-local" class="form-control" name="order_date" id="order_date">
             </div>

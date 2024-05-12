@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -43,6 +45,21 @@ class OrderController extends Controller
         return redirect()->route('order.index')->with('success', 'Order created successfully.');
     }
 
+    public function showOrderDetails($orderId)
+{
+    // Lấy thông tin chi tiết đơn hàng
+    $orderDetails = DB::table('order_details')
+                    ->join('products', 'order_details.product_id', '=', 'products.id')
+                    ->select('products.product_name', 'products.image_url', 'products.price', 'order_details.quantity')
+                    ->where('order_details.order_id', $orderId)
+                    ->get();
+
+    // Lấy dữ liệu sản phẩm từ order details
+    $productIds = $orderDetails->pluck('product_id');
+    $products = Product::whereIn('id', $productIds)->get();
+
+    return view('order_detail', ['orderDetails' => $orderDetails, 'products' => $products]);
+}
     /**
      * Display the specified resource.
      */
