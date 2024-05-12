@@ -8,6 +8,7 @@ use App\Http\Controllers\OriginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\OrderController;
 use App\Models\Brands;
 
 /*
@@ -48,6 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
          'brand' => BrandController::class,
          'origin' => OriginController::class,
         'product' => ProductController::class,
+        'order' => OrderController::class,
 
     ]);
 });

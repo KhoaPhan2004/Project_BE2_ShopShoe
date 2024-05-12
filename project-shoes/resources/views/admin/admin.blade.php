@@ -60,6 +60,7 @@
                 <h1>Admin</h1>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"> <a href="{{ route('admin.index') }}">Home</a>
+                    <li class="nav-item mb-2"><a href="{{ route('order.index') }}" class="nav-link text-white">Đơn Hàng</a></li>
                     </li>
                     <li class="nav-item mb-2"> <a href="{{ route('brand.index') }}">Brand</a>
                     </li>
