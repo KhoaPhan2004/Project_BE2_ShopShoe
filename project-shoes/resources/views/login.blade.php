@@ -10,8 +10,9 @@
     <!-- Bootstrap CSS -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
 
-    <link rel="stylesheet" href="../../css/login.css">
-    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -31,7 +32,7 @@
                     <div class="card " style="border: 1px solid black;">
                         <h3 class="card-header text-center" style=" margin-bottom:20px;">Đăng Nhập</h3>
                         <div class="card-body">
-                            <form method="POST" action="{{ route('admin.login') }}">
+                            <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group mb-3">
                                     <input type="text" placeholder="Email" id="email" class="form-control" name="email" required autofocus>
@@ -49,7 +50,7 @@
                                     </div>
                                 </div>
                                 <div class="d-grid mx-auto">
-                                    <button type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
+                                    <button type="submit" class="btn-green btn-block">Đăng Nhập</button>
                                 </div>
                                 <div class="forgetpassword py-2">
                                     <a href="" style="text-decoration: none;">Bạn quên mật khẩu?</a>
@@ -65,7 +66,7 @@
         <div class="container">
             <div class="row text-center">
 
-                <div class="anaccount">Bạn không có tài khoản <a href="{{route('admin.register') }} " style="text-decoration: none;">Đăng Ký</a>
+                <div class="anaccount">Bạn không có tài khoản <a href="{{route('register') }} " style="text-decoration: none;">Đăng Ký</a>
                 </div>
             </div>
         </div>

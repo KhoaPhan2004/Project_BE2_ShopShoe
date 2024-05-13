@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      .btn{
-        margin: 50px 0 0 100px;
-background-color: greenyellow;
-      }
+        .btn {
+            margin: 50px 0 0 100px;
+            background-color: greenyellow;
+        }
     </style>
 </head>
 

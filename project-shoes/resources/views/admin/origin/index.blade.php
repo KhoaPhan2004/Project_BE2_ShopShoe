@@ -1,37 +1,62 @@
-@extends('admin.admin')
-@section('main')
+<div class="container">
+    @extends('admin.admin')
+    @section('main')
+
+    <div class="header">
+        <h1>Danh Sách Nguồn Ngốc</h1>
+
+    </div>
+    <a href="{{ route('origin.create') }}" class="btn btn-success">Thêm</a>
+    <hr>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- hiển thị thông báo  -->
+    @if(session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+    @endif
+    <link href="{{ asset('css/origin.css') }}" rel="stylesheet">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Created_at</th>
+                <th>Action</th>
 
 
-<h1>Nguồn Ngốc</h1>
-<a href="{{ route('origin.create') }}" class="btn btn-success">Thêm</a>
-<hr>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($origins as $origin)
+            <tr>
+                <td>{{$origin -> id}}</td>
+                <td>{{$origin -> origin_name}}</td>
+                <td>{{$origin -> created_at}}</td>
 
-            <!-- <th>status</th> -->
+                <td>
+                    <form action="{{ route('origin.destroy', $origin->id)}}" method="post">
+                        @csrf @method('DELETE')
+                        <a href="{{ route('origin.edit',$origin->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-fill"></i>
+                        Edit</a>
+                        <button class="btn btn-sm btn-danger "><i class="bi bi-trash3-fill"></i>
+                            Delete</button>
 
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($origins as $origin)
-        <tr>
-            <td>{{$origin -> id}}</td>
-            <td>{{$origin -> origin_name}}</td>
-            <td>
-                <form action="{{ route('origin.destroy', $origin->id)}}" method="post">
-                    @csrf @method('DELETE')
-                    <a href="{{ route('origin.edit',$origin->id) }}" class="btn btn-sm btn-primary">Sua</a>
-                    <button class="btn btn-sm btn-danger">Xoa</button>
+                    </form>
 
-                </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    <div class="pagination-container">
+        @if(session('error'))
+        <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
+        {{$origins->links()}}
+    </div>
 
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
-@stop()
+    @stop()
+</div>
