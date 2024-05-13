@@ -37,7 +37,13 @@ Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'check_register']);
 
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+//login của admin
+Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
+Route::post('admin/login', [AdminController::class, 'check_login']);
+//singout
+Route::get('admin/sing-out', [AdminController::class, 'singOut'])->name('admin.singout');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     //này là routes sort mới nhá
     Route::get('products/sort/{order}', [ProductController::class, 'sort'])->name('products.sort');
