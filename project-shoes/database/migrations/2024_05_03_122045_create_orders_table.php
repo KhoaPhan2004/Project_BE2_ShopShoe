@@ -16,12 +16,14 @@ return new class extends Migration
             $table->unsignedInteger('user_id');
             $table->datetime('order_date');
             $table->string('status', 50);
-            $table->string('address',100);
+            $table->string('address', 100);
             $table->decimal('total_amount', 10, 2)->default(0.00);
             $table->timestamps();
 
             // Foreign key constraint
             $table->foreign('user_id')->references('id')->on('users');
+            $table->index('user_id');
+            $table->index('order_date');
         });
     }
 

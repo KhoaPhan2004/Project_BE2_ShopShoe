@@ -6,47 +6,135 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
-<link href="{{ asset('js/thongke.js') }}" rel="stylesheet">
+<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+<link rel="stylesheet" href="bower_components/morris.js/morris.css">
+<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
 <style>
-    .dropdown-menu {
-        display: none;
+    .bg-aqua {
+        background-color: aqua;
+        /* Màu nền */
+        color: #fff;
+        /* Màu chữ */
+    }
+
+    .bg-green {
+        background-color: green;
+        /* Màu nền */
+        color: #fff;
+        /* Màu chữ */
+    }
+
+    .bg-yellow {
+        background-color: yellow;
+        /* Màu nền */
+        color: #000;
+        /* Màu chữ */
+    }
+
+    .bg-red {
+        background-color: red;
+        /* Màu nền */
+        color: #fff;
+        /* Màu chữ */
     }
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-lg-10">
-            <h1>Thống Kê Doanh Thu</h1>
-            <div class="nav-depart">
-                <div class="depart-btn">
-                    <span>Thống kê theo ngày</span>
-                    <i class="bi bi-list"></i>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Thống kê theo tuần</a></li>
-                        <li><a href="#">Thống kê theo tháng</a></li>
-                        <li><a href="#">Thống kê theo năm</a></li>
-                    </ul>
+        <div class="col-lg-3 col-6 ">
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>{{$product_count}}</h3>
+                    <p>Products</p>
                 </div>
-
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+                <a href="{{ route('product.index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>{{$brand_count}}</h3>
+                    <p>Brand Count</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="{{ route('brand.index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>{{$order_count}}</h3>
+                    <p>Order</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>{{$origin_count}}</h3>
+                    <p>Origin</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="{{ route('origin.index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h1>Thống Kê Doanh Thu</h1>
+        <div class="col-lg-2">
+            <select class="dashboard-filter form-control" name="" id="dashboard-filter">
+                <option value="">Chọn</option>
+                <option value="7 ngay">7 ngày</option>
+                <option value="thang truot">Tháng trước</option>
+                <option value="thang nay">Tháng này</option>
+                <option value="1 nam">1 năm</option>
+            </select>
+
+        </div>
+        <div class="col-lg-8">
+
             <div class="date_time">
                 <div class="row">
                     <div class="col-lg-6">
                         <span>Từ Ngày</span>
-                        <input type="date">
+                        <input type="date" id="start-date">
                     </div>
                     <div class="col-lg-6">
                         <span>Tới Ngày</span>
-
-                        <input type="date">
+                        <input type="date" id="end-date">
+                        <input type="button" class="btn btn-primary" value="Lọc kết quả" name="" id="filter-button">
                     </div>
                 </div>
             </div>
+            <div class="col-lg-2">
+
+            </div>
         </div>
-        <div class="col-lg-2">
-            <!-- Đây có thể là nội dung cho phần cột bên phải nếu cần -->
-        </div>
+
     </div>
+
     <div class="chart-container">
         <div id="myfirstchart" style="height: 250px;"></div>
 
@@ -54,26 +142,52 @@
 </div>
 
 <script>
-  
-    new Morris.Bar({
-        element: 'myfirstchart',
-        data: <?php echo json_encode($data); ?>, // Sử dụng dữ liệu từ biến $data
-        xkey: 'year',
-        ykeys: ['value'],
-        labels: ['Value']
-    });
+    // Biến global để lưu trữ biểu đồ
+    var myChart;
 
-    // JavaScript để xử lý sự kiện khi click vào biểu tượng dropdown
     $(document).ready(function() {
-        $('.bi-list').click(function() {
-            $('.dropdown-menu').toggle();
-        });
+        // Khởi tạo biểu đồ khi trang được tải
+        initializeChart();
 
-        $(document).click(function(e) {
-            if (!$(e.target).closest('.depart-btn').length) {
-                $('.dropdown-menu').hide();
+        $('#dashboard-filter').change(function() {
+            var selectedOption = $(this).val();
+            if (selectedOption) {
+                //gửi  Ajax đến máy chủ
+                $.ajax({
+                    url: '/filter-statistics',
+                    method: 'GET',
+                    data: {
+                        option: selectedOption
+                    },
+                    success: function(response) {
+                        // Cập nhật dữ liệu của biểu đồ hiện có
+                        updateChartData(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
             }
         });
     });
+
+    function initializeChart() {
+        myChart = new Morris.Bar({
+            element: 'myfirstchart',
+            data: <?php echo json_encode($data); ?>,
+            xkey: 'order_date',
+            ykeys: ['profit', 'total_order'],
+            labels: ['Lợi Nhuận', 'Tổng Đơn Hàng'],
+            hideHover: 'auto',
+            resize: true,
+            barColors: ['#0b62a4', '#7a92a3'],
+        });
+    }
+
+    function updateChartData(data) {
+        myChart.setData(data);
+    }
 </script>
+
+
 @stop()

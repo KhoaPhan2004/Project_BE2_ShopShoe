@@ -8,6 +8,7 @@ use App\Http\Controllers\OriginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Models\Brands;
+use App\Http\Controllers\StatisticController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Route::post('login', [UserController::class, 'check_login']);
 Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'check_register']);
 
+Route::get('/filter-statistics', [StatisticController::class, 'filter']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
