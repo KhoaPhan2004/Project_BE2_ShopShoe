@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::aig9lazqPzNQrBeV',
+            '_route' => 'generated::GdHLC0qrAUH6az1J',
           ),
           1 => NULL,
           2 => 
@@ -123,6 +123,118 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'home.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/login' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'login',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::2in5xMIDDRojjYLo',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/register' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'register',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::DJATdttIJmCMHT2X',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/cart' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'cart.view',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/cart/clear' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'cart.clear',
           ),
           1 => NULL,
           2 => 
@@ -159,7 +271,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::MwsDeX1tR0gF5NcL',
+            '_route' => 'generated::mRfoFJxQX5IOAdxH',
           ),
           1 => NULL,
           2 => 
@@ -172,35 +284,19 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/register' => 
+      '/admin/sing-out' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.register',
+            '_route' => 'admin.singout',
           ),
           1 => NULL,
           2 => 
           array (
             'GET' => 0,
             'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'generated::fWzUUbI4Smjj1WGa',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -399,11 +495,191 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|brand/([^/]++)(?|(*:34)|/edit(*:46)|(*:53))|origin/([^/]++)(?|(*:79)|/edit(*:91)|(*:98))|product/([^/]++)(?|(*:125)|/edit(*:138)|(*:146))))/?$}sDu',
+      0 => '{^(?|/cart/(?|add/([^/]++)(*:28)|delete/([^/]++)(*:50)|update/([^/]++)(*:72))|/admin/(?|product(?|s/sort/([^/]++)(*:115)|/([^/]++)(?|(*:135)|/edit(*:148)|(*:156)))|brand/([^/]++)(?|(*:183)|/edit(*:196)|(*:204))|origin/([^/]++)(?|(*:231)|/edit(*:244)|(*:252))))/?$}sDu',
     ),
     3 => 
     array (
-      34 => 
+      28 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'cart.add',
+          ),
+          1 => 
+          array (
+            0 => 'product',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      50 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'cart.delete',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      72 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'cart.update',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      115 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'products.sort',
+          ),
+          1 => 
+          array (
+            0 => 'order',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      135 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product.show',
+          ),
+          1 => 
+          array (
+            0 => 'product',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      148 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product.edit',
+          ),
+          1 => 
+          array (
+            0 => 'product',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      156 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product.update',
+          ),
+          1 => 
+          array (
+            0 => 'product',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'product',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      183 => 
       array (
         0 => 
         array (
@@ -426,7 +702,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      46 => 
+      196 => 
       array (
         0 => 
         array (
@@ -449,7 +725,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      53 => 
+      204 => 
       array (
         0 => 
         array (
@@ -491,7 +767,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      79 => 
+      231 => 
       array (
         0 => 
         array (
@@ -514,7 +790,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      91 => 
+      244 => 
       array (
         0 => 
         array (
@@ -537,7 +813,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      98 => 
+      252 => 
       array (
         0 => 
         array (
@@ -568,94 +844,6 @@ app('router')->setCompiledRoutes(
           1 => 
           array (
             0 => 'origin',
-          ),
-          2 => 
-          array (
-            'DELETE' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      125 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product.show',
-          ),
-          1 => 
-          array (
-            0 => 'product',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      138 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product.edit',
-          ),
-          1 => 
-          array (
-            0 => 'product',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      146 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product.update',
-          ),
-          1 => 
-          array (
-            0 => 'product',
-          ),
-          2 => 
-          array (
-            'PUT' => 0,
-            'PATCH' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'product.destroy',
-          ),
-          1 => 
-          array (
-            0 => 'product',
           ),
           2 => 
           array (
@@ -828,7 +1016,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::aig9lazqPzNQrBeV' => 
+    'generated::GdHLC0qrAUH6az1J' => 
     array (
       'methods' => 
       array (
@@ -851,7 +1039,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::aig9lazqPzNQrBeV',
+        'as' => 'generated::GdHLC0qrAUH6az1J',
       ),
       'fallback' => false,
       'defaults' => 
@@ -904,6 +1092,337 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'login' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'login',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\UserController@login',
+        'controller' => 'App\\Http\\Controllers\\UserController@login',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'login',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::2in5xMIDDRojjYLo' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'login',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\UserController@check_login',
+        'controller' => 'App\\Http\\Controllers\\UserController@check_login',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::2in5xMIDDRojjYLo',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'register' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'register',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\UserController@register',
+        'controller' => 'App\\Http\\Controllers\\UserController@register',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'register',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::DJATdttIJmCMHT2X' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'register',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\UserController@check_register',
+        'controller' => 'App\\Http\\Controllers\\UserController@check_register',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::DJATdttIJmCMHT2X',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'cart.view' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'cart',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CartController@view',
+        'controller' => 'App\\Http\\Controllers\\CartController@view',
+        'namespace' => NULL,
+        'prefix' => '/cart',
+        'where' => 
+        array (
+        ),
+        'as' => 'cart.view',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'cart.add' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'cart/add/{product}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CartController@addToCart',
+        'controller' => 'App\\Http\\Controllers\\CartController@addToCart',
+        'namespace' => NULL,
+        'prefix' => '/cart',
+        'where' => 
+        array (
+        ),
+        'as' => 'cart.add',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'cart.delete' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'cart/delete/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CartController@deleteCart',
+        'controller' => 'App\\Http\\Controllers\\CartController@deleteCart',
+        'namespace' => NULL,
+        'prefix' => '/cart',
+        'where' => 
+        array (
+        ),
+        'as' => 'cart.delete',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'cart.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'cart/update/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CartController@updateCart',
+        'controller' => 'App\\Http\\Controllers\\CartController@updateCart',
+        'namespace' => NULL,
+        'prefix' => '/cart',
+        'where' => 
+        array (
+        ),
+        'as' => 'cart.update',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'cart.clear' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'cart/clear',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CartController@clearCart',
+        'controller' => 'App\\Http\\Controllers\\CartController@clearCart',
+        'namespace' => NULL,
+        'prefix' => '/cart',
+        'where' => 
+        array (
+        ),
+        'as' => 'cart.clear',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'admin.login' => 
     array (
       'methods' => 
@@ -941,7 +1460,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::MwsDeX1tR0gF5NcL' => 
+    'generated::mRfoFJxQX5IOAdxH' => 
     array (
       'methods' => 
       array (
@@ -961,7 +1480,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::MwsDeX1tR0gF5NcL',
+        'as' => 'generated::mRfoFJxQX5IOAdxH',
       ),
       'fallback' => false,
       'defaults' => 
@@ -977,64 +1496,28 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'admin.register' => 
+    'admin.singout' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/register',
+      'uri' => 'admin/sing-out',
       'action' => 
       array (
         'middleware' => 
         array (
           0 => 'web',
         ),
-        'uses' => 'App\\Http\\Controllers\\AdminController@register',
-        'controller' => 'App\\Http\\Controllers\\AdminController@register',
+        'uses' => 'App\\Http\\Controllers\\AdminController@singOut',
+        'controller' => 'App\\Http\\Controllers\\AdminController@singOut',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
         array (
         ),
-        'as' => 'admin.register',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'generated::fWzUUbI4Smjj1WGa' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'admin/register',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'uses' => 'App\\Http\\Controllers\\AdminController@check_register',
-        'controller' => 'App\\Http\\Controllers\\AdminController@check_register',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-        'as' => 'generated::fWzUUbI4Smjj1WGa',
+        'as' => 'admin.singout',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1063,7 +1546,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'uses' => 'App\\Http\\Controllers\\AdminController@index',
         'controller' => 'App\\Http\\Controllers\\AdminController@index',
@@ -1073,6 +1556,44 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'admin.index',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'products.sort' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/products/sort/{order}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductController@sort',
+        'controller' => 'App\\Http\\Controllers\\ProductController@sort',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+        'as' => 'products.sort',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1101,7 +1622,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'brand.index',
         'uses' => 'App\\Http\\Controllers\\BrandController@index',
@@ -1139,7 +1660,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'brand.create',
         'uses' => 'App\\Http\\Controllers\\BrandController@create',
@@ -1176,7 +1697,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'brand.store',
         'uses' => 'App\\Http\\Controllers\\BrandController@store',
@@ -1214,7 +1735,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'brand.show',
         'uses' => 'App\\Http\\Controllers\\BrandController@show',
@@ -1252,7 +1773,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'brand.edit',
         'uses' => 'App\\Http\\Controllers\\BrandController@edit',
@@ -1290,7 +1811,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'brand.update',
         'uses' => 'App\\Http\\Controllers\\BrandController@update',
@@ -1327,7 +1848,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'brand.destroy',
         'uses' => 'App\\Http\\Controllers\\BrandController@destroy',
@@ -1365,7 +1886,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'origin.index',
         'uses' => 'App\\Http\\Controllers\\OriginController@index',
@@ -1403,7 +1924,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'origin.create',
         'uses' => 'App\\Http\\Controllers\\OriginController@create',
@@ -1440,7 +1961,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'origin.store',
         'uses' => 'App\\Http\\Controllers\\OriginController@store',
@@ -1478,7 +1999,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'origin.show',
         'uses' => 'App\\Http\\Controllers\\OriginController@show',
@@ -1516,7 +2037,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'origin.edit',
         'uses' => 'App\\Http\\Controllers\\OriginController@edit',
@@ -1554,7 +2075,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'origin.update',
         'uses' => 'App\\Http\\Controllers\\OriginController@update',
@@ -1591,7 +2112,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'origin.destroy',
         'uses' => 'App\\Http\\Controllers\\OriginController@destroy',
@@ -1629,7 +2150,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'product.index',
         'uses' => 'App\\Http\\Controllers\\ProductController@index',
@@ -1667,7 +2188,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'product.create',
         'uses' => 'App\\Http\\Controllers\\ProductController@create',
@@ -1704,7 +2225,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'product.store',
         'uses' => 'App\\Http\\Controllers\\ProductController@store',
@@ -1742,7 +2263,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'product.show',
         'uses' => 'App\\Http\\Controllers\\ProductController@show',
@@ -1780,7 +2301,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'product.edit',
         'uses' => 'App\\Http\\Controllers\\ProductController@edit',
@@ -1818,7 +2339,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'product.update',
         'uses' => 'App\\Http\\Controllers\\ProductController@update',
@@ -1855,7 +2376,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth',
+          1 => 'admin',
         ),
         'as' => 'product.destroy',
         'uses' => 'App\\Http\\Controllers\\ProductController@destroy',

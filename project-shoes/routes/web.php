@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OriginController;
 use App\Http\Controllers\ProductController;
@@ -36,6 +37,15 @@ Route::post('login', [UserController::class, 'check_login']);
 Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'check_register']);
 
+//cart
+Route::group(['prefix'=>'cart'],function(){
+    Route::get('/',[CartController::class,'view'])->name('cart.view');
+    Route::get('/add/{product}',[CartController::class,'addToCart'])->name('cart.add');
+    Route::get('/delete/{id}',[CartController::class,'deleteCart'])->name('cart.delete');
+    Route::get('/update/{id}',[CartController::class,'updateCart'])->name('cart.update');
+    Route::get('/clear',[CartController::class,'clearCart'])->name('cart.clear');
+});
+
 
 //login của admin
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
@@ -55,3 +65,4 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     ]);
 });
+
