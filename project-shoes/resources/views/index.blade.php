@@ -107,7 +107,7 @@
                     <h2>{{ $product->product_name }}</h2>
                     <p>{{ $product->description }}</p>
                     <h3>${{ $product->price }}</h3>
-                    <a href="#" class="btn">Add To Cart</a>
+                    <a href="{{route('cart.add',$product->id) }}" class="btn">Add To Cart</a>
                 </div>
             </div>
             @endforeach
