@@ -10,8 +10,8 @@ use App\Http\Controllers\OriginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Models\Brands;
+use App\Http\Controllers\StatisticController;
 use App\Models\Customer;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,16 +56,20 @@ Route::group(['prefix'=>'order','middleware'=>'customer'],function(){
     Route::post('/checkout',[CheckoutController::class,'post_checkout']);
 });
 
+Route::get('/filter-statistics', [StatisticController::class, 'filter']);
+
 //login của admin
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [AdminController::class, 'check_login']);
 //singout
 Route::get('admin/sing-out', [AdminController::class, 'singOut'])->name('admin.singout');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     //này là routes sort mới nhá
     Route::get('products/sort/{order}', [ProductController::class, 'sort'])->name('products.sort');
+    
+    Route::get('admin/statistics', [AdminController::class, 'statistics'])->name('admin.statistics');
 
     Route::resources([
         'brand' => BrandController::class,

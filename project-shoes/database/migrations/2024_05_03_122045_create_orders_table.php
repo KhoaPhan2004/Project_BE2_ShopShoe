@@ -25,6 +25,8 @@ return new class extends Migration
 
             // Foreign key constraint
             $table->foreign('user_id')->references('id')->on('users');
+            $table->index('user_id');
+            $table->index('order_date');
         });
     }
 

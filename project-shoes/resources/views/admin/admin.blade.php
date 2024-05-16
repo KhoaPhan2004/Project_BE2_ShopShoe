@@ -8,10 +8,11 @@
     <title>Title Page</title>
 
     <!-- Bootstrap CSS -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Custom CSS */
         .navbar-left {
             font-size: 20px;
             background: linear-gradient(to right, #00d2ff, #3a7bd5);
@@ -67,7 +68,7 @@
                     </li>
                     <li class="nav-item mb-2"> <a href="{{ route('product.index') }}">Product</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Thống Kê</a></li>
+                    <li class="nav-item mb-2"><a href="{{ route('admin.statistics') }}">Thống Kê</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Setting</a></li>
                     <li class="nav-item mb-2"><a href="{{ route('admin.singout') }}" class="nav-link text-white">SingOut</a></li>
 
