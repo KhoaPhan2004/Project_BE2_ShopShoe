@@ -108,10 +108,15 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+
+    public function show($id)
     {
-        //
+        $product = Product::with(['brand', 'origin'])->findOrFail($id);
+        return view('admin.product.show', compact('product'));
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -120,7 +125,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         if (!$product) {
-            abort(404); 
+            abort(404);
         }
 
         $brands = Brand::orderBy('brand_name', 'DESC')->select('id', 'brand_name')->get();
@@ -136,7 +141,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         if (!$product) {
-            abort(404); 
+            abort(404);
         }
 
         // Xử lý các dữ liệu được gửi từ form

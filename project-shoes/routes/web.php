@@ -9,6 +9,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OriginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CrudUserController;
+
 use App\Models\Brands;
 use App\Http\Controllers\StatisticController;
 use App\Models\Customer;
@@ -75,6 +77,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         'brand' => BrandController::class,
         'origin' => OriginController::class,
         'product' => ProductController::class,
+        'user' => CrudUserController::class,
 
     ]);
 });

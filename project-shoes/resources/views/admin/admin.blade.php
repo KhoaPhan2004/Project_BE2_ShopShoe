@@ -68,6 +68,8 @@
                     </li>
                     <li class="nav-item mb-2"> <a href="{{ route('product.index') }}">Product</a>
                     </li>
+                    <li class="nav-item mb-2"><a href="{{ route('user.index') }}">User</a></li>
+
                     <li class="nav-item mb-2"><a href="{{ route('admin.statistics') }}">Thống Kê</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Setting</a></li>
                     <li class="nav-item mb-2"><a href="{{ route('admin.singout') }}" class="nav-link text-white">SingOut</a></li>

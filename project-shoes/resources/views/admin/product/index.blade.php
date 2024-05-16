@@ -54,6 +54,8 @@
             <td>
                 <form action="{{ route('product.destroy', $product->id)}}" method="post">
                     @csrf @method('DELETE')
+                    <a href="{{ route('product.show', $product->id) }}" class="btn btn-sm btn-info">Hiển Thị</a>
+
                     <a href="{{ route('product.edit',$product->id) }}" class="btn btn-sm btn-primary">Sua</a>
                     <button class="btn btn-sm btn-danger">Xoa</button>
 

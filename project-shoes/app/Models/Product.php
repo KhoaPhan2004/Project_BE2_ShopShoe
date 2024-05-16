@@ -18,4 +18,13 @@ class Product extends Model
         'origin_id',
         'size',
     ];
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
+
+    public function origin()
+    {
+        return $this->belongsTo(Origin::class);
+    }
 }
