@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash; // Import Hash facade
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -12,17 +13,33 @@ class UserController extends Controller
     {
         return view('login');
     }
-    public function check_login()
+    public function check_login(Request $request)
     {
-        request()->validate([
+        // request()->validate([
+        //     'email' => 'required|email|exists:users',
+        //     'password' => 'required',
+
+        // ]);
+        // $data = request()->only('email', 'password');
+        // if (auth('web')->attempt($data)) {
+        //     return redirect()->route('home.index');
+        // }
+        // else{
+        //     return redirect()->back()->withInput()->withErrors(['sai thong tin']);
+        // }
+        $request->validate([
             'email' => 'required|email|exists:users',
             'password' => 'required',
-
         ]);
-        $data = request()->all('email', 'password');
-        if (auth()->attempt($data)) {
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
             return redirect()->route('home.index');
+               
         }
+
+        return redirect("login")->withSuccess('Login details are not valid');
     }
 
     public function register()

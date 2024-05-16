@@ -37,6 +37,7 @@
                     <li><a href="#About">About</a></li>
                     <li><a href="#Review">Review</a></li>
                     <li><a href="#Servises">Servises</a></li>
+                    <li><a href="{{route('order.history')}}">My order</a></li>
                 </ul>
 
                 <div class="icons">

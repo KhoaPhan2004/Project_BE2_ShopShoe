@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedInteger('order_id');
             $table->unsignedInteger('product_id');
             $table->integer('quantity');
+            $table->decimal('price', 10, 2);
             $table->timestamps();
 
             // Foreign key constraints
