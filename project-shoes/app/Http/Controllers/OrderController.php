@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\OrderDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -108,9 +109,15 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
-        // Delete the order
+        // Tìm đơn hàng bằng ID
+        $order = Order::findOrFail($id);
+
+        // Xóa các chi tiết đơn hàng liên quan
+        OrderDetails::where('order_id', $id)->delete();
+
+        // Xóa đơn hàng
         $order->delete();
 
         return redirect()->route('order.index')->with('success', 'Order deleted successfully.');
