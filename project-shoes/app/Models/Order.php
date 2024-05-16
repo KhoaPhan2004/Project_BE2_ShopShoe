@@ -11,4 +11,12 @@ class Order extends Model
     protected $fillable = [
         'user_id', 'order_date', 'status', 'address'
     ];
+    public function calculateTotalPrice()
+    {
+        $total = 0;
+        foreach ($this->details as $detail) {
+            $total += $detail->product->price * $detail->quantity;
+        }
+        return $total;
+    }
 }

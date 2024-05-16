@@ -101,6 +101,7 @@
             <th>Địa chỉ người nhận</th>
             <th>Tình trạng</th>
             <th>Giá</th>
+            <th>Tổng tiền</th>
             <th>Thao tác</th>
         </tr>
     </thead>
@@ -114,12 +115,17 @@
             <td>{{ $orderDetail->address }}</td>
             <td>{{ $orderDetail->status }}</td>
             <td>{{ $orderDetail->price }}</td>
+            <td>{{ $orderDetail->total_amount }}</td>
             <td>
                 @if ($orderDetail->status != 'cancelled')
-                <form action="" method="post">
-    @csrf
-    <button type="submit">Hủy Đơn Hàng</button>
-</form>
+                <form action="{{ route('order.destroy', $orderDetail->order_id) }}" method="post"
+                 onsubmit="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này?');">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"><i class="fa-solid fa-plus"></i></button>
+                    <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                    <button type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
+                </form>
                 @endif
             </td>
         </tr>

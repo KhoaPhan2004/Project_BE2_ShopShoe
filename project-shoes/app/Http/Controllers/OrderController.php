@@ -47,28 +47,42 @@ class OrderController extends Controller
     }
 
     public function showOrderDetails($userId)
-{
-    // Lấy thông tin chi tiết đơn hàng cho người dùng cụ thể
-    $orderDetails = DB::table('order_details')
-                ->join('orders', 'order_details.order_id', '=', 'orders.id')
-                ->join('users', 'orders.user_id', '=', 'users.id')
-                ->join('products', 'order_details.product_id', '=', 'products.id')
-                ->select('orders.id as order_id', 'products.product_name', 'products.image_url','products.description', 'products.price',
-                 'order_details.quantity', 'users.address', 'orders.status')
-                ->where('users.id', $userId)
-                ->get();
-
-    // Lấy danh sách ID của các sản phẩm từ chi tiết đơn hàng
-    $productIds = $orderDetails->pluck('product_id');
-
-    // Lấy thông tin chi tiết của các sản phẩm
-    $products = Product::whereIn('id', $productIds)->get();
-
-    return view('order_detail', ['orderDetails' => $orderDetails, 'products' => $products]);
-}
-
-
-
+    {
+        // Lấy thông tin chi tiết đơn hàng cho người dùng cụ thể
+        $orderDetails = DB::table('order_details')
+                    ->join('orders', 'order_details.order_id', '=', 'orders.id')
+                    ->join('users', 'orders.user_id', '=', 'users.id')
+                    ->join('products', 'order_details.product_id', '=', 'products.id')
+                    ->select('orders.id as order_id', 'products.product_name', 'products.image_url', 'products.description', 'products.price',
+                     'order_details.quantity', 'users.address', 'orders.status','orders.total_amount')
+                    ->where('users.id', $userId)
+                    ->get();
+    
+        // Lấy danh sách ID của các đơn hàng từ chi tiết đơn hàng
+        $orderIds = $orderDetails->pluck('order_id');
+    
+        // Tính tổng tiền của mỗi đơn hàng
+        $totalAmounts = [];
+        foreach ($orderIds as $orderId) {
+            $totalAmount = OrderDetails::where('order_id', $orderId)
+                            ->join('products', 'order_details.product_id', '=', 'products.id')
+                            ->sum(DB::raw('quantity * price'));
+            $totalAmounts[$orderId] = $totalAmount;
+        }
+    
+        // Cập nhật tổng tiền vào cột total_amount của đơn hàng tương ứng
+        foreach ($totalAmounts as $orderId => $totalAmount) {
+            Order::where('id', $orderId)->update(['total_amount' => $totalAmount]);
+        }
+    
+        // Lấy danh sách ID của các sản phẩm từ chi tiết đơn hàng
+        $productIds = $orderDetails->pluck('product_id');
+    
+        // Lấy thông tin chi tiết của các sản phẩm
+        $products = Product::whereIn('id', $productIds)->get();
+    
+        return view('order_detail', ['orderDetails' => $orderDetails]);
+    }
     /**
      * Display the specified resource.
      */
