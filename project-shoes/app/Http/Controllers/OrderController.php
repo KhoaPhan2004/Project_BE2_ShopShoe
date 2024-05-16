@@ -45,21 +45,29 @@ class OrderController extends Controller
         return redirect()->route('order.index')->with('success', 'Order created successfully.');
     }
 
-    public function showOrderDetails($orderId)
+    public function showOrderDetails($userId)
 {
-    // Lấy thông tin chi tiết đơn hàng
+    // Lấy thông tin chi tiết đơn hàng cho người dùng cụ thể
     $orderDetails = DB::table('order_details')
-                    ->join('products', 'order_details.product_id', '=', 'products.id')
-                    ->select('products.product_name', 'products.image_url', 'products.price', 'order_details.quantity')
-                    ->where('order_details.order_id', $orderId)
-                    ->get();
+                ->join('orders', 'order_details.order_id', '=', 'orders.id')
+                ->join('users', 'orders.user_id', '=', 'users.id')
+                ->join('products', 'order_details.product_id', '=', 'products.id')
+                ->select('orders.id as order_id', 'products.product_name', 'products.image_url','products.description', 'products.price',
+                 'order_details.quantity', 'users.address', 'orders.status')
+                ->where('users.id', $userId)
+                ->get();
 
-    // Lấy dữ liệu sản phẩm từ order details
+    // Lấy danh sách ID của các sản phẩm từ chi tiết đơn hàng
     $productIds = $orderDetails->pluck('product_id');
+
+    // Lấy thông tin chi tiết của các sản phẩm
     $products = Product::whereIn('id', $productIds)->get();
 
     return view('order_detail', ['orderDetails' => $orderDetails, 'products' => $products]);
 }
+
+
+
     /**
      * Display the specified resource.
      */
@@ -94,6 +102,8 @@ class OrderController extends Controller
 
         return redirect()->route('order.index')->with('success', 'Order updated successfully.');
     }
+
+
 
     /**
      * Remove the specified resource from storage.

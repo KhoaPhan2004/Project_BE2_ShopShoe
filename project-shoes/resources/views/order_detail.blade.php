@@ -95,22 +95,38 @@
     <thead>
         <tr>
             <th>Tên sản phẩm</th>
+            <th>Mô tả</th>
             <th>Hình ảnh</th>
-            <th>Giá</th>
             <th>Số lượng</th>
+            <th>Địa chỉ người nhận</th>
+            <th>Tình trạng</th>
+            <th>Giá</th>
+            <th>Thao tác</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($orderDetails as $orderDetail)
         <tr>
             <td>{{ $orderDetail->product_name }}</td>
+            <td>{{ $orderDetail->description }}</td>
             <td><img src="{{ asset('images/' . $orderDetail->image_url) }}" alt="Product Image"></td>
-            <td>{{ $orderDetail->price }}</td>
             <td>{{ $orderDetail->quantity }}</td>
+            <td>{{ $orderDetail->address }}</td>
+            <td>{{ $orderDetail->status }}</td>
+            <td>{{ $orderDetail->price }}</td>
+            <td>
+                @if ($orderDetail->status != 'cancelled')
+                <form action="" method="post">
+    @csrf
+    <button type="submit">Hủy Đơn Hàng</button>
+</form>
+                @endif
+            </td>
         </tr>
         @endforeach
     </tbody>
 </table>
+
     </div>
     <!--Footer-->
 

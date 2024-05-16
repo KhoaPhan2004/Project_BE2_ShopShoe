@@ -44,6 +44,9 @@ Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 Route::get('/order/{id}', [OrderController::class, 'showOrderDetails']);
 
+Route::get('/order/{userId}', [OrderController::class, 'showOrderDetails']);
+Route::post('/order/{orderId}/edit', [OrderController::class, 'editOrder']);
+Route::post('/order/{orderId}/delete', [OrderController::class, 'deleteOrder']);
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
