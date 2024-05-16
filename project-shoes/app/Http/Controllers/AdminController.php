@@ -20,22 +20,16 @@ class AdminController extends Controller
 
     public function statistics()
     {
-        // Lấy dữ liệu từ bảng statistics
+        
         $statistics = Statistic::all();
-        // dd($statistics);
-
-        // Chuyển đổi dữ liệu sang định dạng phù hợp cho biểu đồ
         $data = [];
         foreach ($statistics as $statistic) {
-            // Chuyển đổi ngày đặt hàng thành đối tượng Carbon
             $orderDate = Carbon::parse($statistic->order_date);
-
-            // Kiểm tra nếu chuyển đổi thành công
             if ($orderDate) {
                 $data[] = [
-                    'year' => $orderDate->format('d/M'), // Lấy tháng từ ngày đặt hàng
-                    'profit' => $statistic->profit, // Lợi nhuận từ thống kê
-                    'total_order' => $statistic->total_order, // Số lượng đơn hàng từ thống kê
+                    'order_date' => $orderDate->format('d/M'), // Định dạng ngày/tháng
+                    'profit' => $statistic->profit,
+                    'total_order' => $statistic->total_order,
                 ];
             }
         }
@@ -45,7 +39,5 @@ class AdminController extends Controller
         $origin_count = Origin::count();
 
         return view('admin.statistics', compact('data', 'product_count', 'order_count', 'brand_count', 'origin_count'));
-
-        // Truyền dữ liệu sang view
     }
 }

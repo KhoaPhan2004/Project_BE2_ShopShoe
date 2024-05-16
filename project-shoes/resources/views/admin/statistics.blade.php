@@ -1,49 +1,35 @@
 @extends('admin.admin')
 @section('main')
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.0-alpha1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
-<link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-<link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
-<link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-<link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
-<link rel="stylesheet" href="bower_components/morris.js/morris.css">
-<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
 <style>
     .bg-aqua {
         background-color: aqua;
-        /* Màu nền */
         color: #fff;
-        /* Màu chữ */
     }
 
     .bg-green {
         background-color: green;
-        /* Màu nền */
         color: #fff;
-        /* Màu chữ */
     }
 
     .bg-yellow {
         background-color: yellow;
-        /* Màu nền */
         color: #000;
-        /* Màu chữ */
     }
 
     .bg-red {
         background-color: red;
-        /* Màu nền */
         color: #fff;
-        /* Màu chữ */
+    }
+    .header{
+        margin-bottom: 200px;
     }
 </style>
 <div class="container">
@@ -101,7 +87,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row header">
         <h1>Thống Kê Doanh Thu</h1>
         <div class="col-lg-2">
             <select class="dashboard-filter form-control" name="" id="dashboard-filter">
@@ -117,15 +103,15 @@
 
             <div class="date_time">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <span>Từ Ngày</span>
-                        <input type="date" id="start-date">
-                    </div>
-                    <div class="col-lg-6">
-                        <span>Tới Ngày</span>
-                        <input type="date" id="end-date">
-                        <input type="button" class="btn btn-primary" value="Lọc kết quả" name="" id="filter-button">
-                    </div>
+                <div class="col-lg-6">
+                    <span>Từ Ngày</span>
+                    <input type="date" id="start-date">
+                </div>
+                <div class="col-lg-6">
+                    <span>Tới Ngày</span>
+                    <input type="date" id="end-date">
+                    <input type="button" class="btn btn-primary" value="Lọc kết quả" name="" id="filter-button">
+                </div>
                 </div>
             </div>
             <div class="col-lg-2">
@@ -142,39 +128,69 @@
 </div>
 
 <script>
-    // Biến global để lưu trữ biểu đồ
+    //  để lưu trữ biểu đồ
     var myChart;
 
     $(document).ready(function() {
-        // Khởi tạo biểu đồ khi trang được tải
-        initializeChart();
+    initializeChart();
 
-        $('#dashboard-filter').change(function() {
-            var selectedOption = $(this).val();
-            if (selectedOption) {
-                //gửi  Ajax đến máy chủ
-                $.ajax({
-                    url: '/filter-statistics',
-                    method: 'GET',
-                    data: {
-                        option: selectedOption
-                    },
-                    success: function(response) {
-                        // Cập nhật dữ liệu của biểu đồ hiện có
-                        updateChartData(response);
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(error);
-                    }
-                });
-            }
-        });
-    });
+    function filterStatistics() {
+        var selectedOption = $('#dashboard-filter').val();
+        var startDate = $('#start-date').val();
+        var endDate = $('#end-date').val();
+
+        if (selectedOption) {
+            // chọn lọc theo dropdown
+            $.ajax({
+                url: '/filter-statistics',
+                method: 'GET',
+                data: {
+                    option: selectedOption
+                },
+                success: function(response) {
+                    response.sort(function(a, b) {
+                        return new Date(a.order_date.split('/').reverse().join('/')) - new Date(b.order_date.split('/').reverse().join('/'));
+                    });
+                    updateChartData(response);
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        } else if (startDate && endDate) {
+            // nhập start và end nhá
+            $.ajax({
+                url: '/filter-statistics',
+                method: 'GET',
+                data: {
+                    start_date: startDate,
+                    end_date: endDate
+                },
+                success: function(response) {
+                    response.sort(function(a, b) {
+                        return new Date(a.order_date.split('/').reverse().join('/')) - new Date(b.order_date.split('/').reverse().join('/'));
+                    });
+                    updateChartData(response);
+                },
+                error: function(xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        }
+    }
+
+    // Sự kiện thay đổi cho dropdown
+    $('#dashboard-filter').change(filterStatistics);
+
+    // Sự kiện click cho nút lọc
+    $('#filter-button').click(filterStatistics);
+});
+
 
     function initializeChart() {
         myChart = new Morris.Bar({
             element: 'myfirstchart',
-            data: <?php echo json_encode($data); ?>,
+            data: @json($data),
             xkey: 'order_date',
             ykeys: ['profit', 'total_order'],
             labels: ['Lợi Nhuận', 'Tổng Đơn Hàng'],

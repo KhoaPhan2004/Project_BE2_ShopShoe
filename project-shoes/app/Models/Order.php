@@ -14,66 +14,64 @@ class Order extends Model
 
     protected static function booted()
     {
-        static::saving(function ($order) {
-            self::updateStatistics($order, 'saving');
+        static::creating(function ($order) {
+            self::updateStatistics($order, 'created');
         });
-
-        static::updated(function ($order) {
+    
+        static::updating(function ($order) {
             self::updateStatistics($order, 'updated');
         });
-
-        static::deleted(function ($order) {
+    
+        static::deleting(function ($order) {
             self::updateStatisticsAfterDelete($order);
         });
     }
+    
 
     protected static function updateStatistics($order, $action)
     {
-        if ($action === 'saving') {
-            // Kiểm tra xem đơn hàng đã được lưu vào cơ sở dữ liệu chưa
-            if (!$order->exists) {
-                return;
-            }
-        }
-        // Lấy ngày hiện tại của đơn hàng
+        // Chuyển đổi order_date thành dạng Carbon
         $orderDate = Carbon::createFromFormat('Y-m-d H:i:s', $order->order_date)->startOfDay();
 
-        // Tìm hoặc tạo một bản ghi thống kê cho ngày này
+        // Tìm hoặc tạo bản ghi thống kê
         $statistic = Statistic::firstOrNew(['order_date' => $orderDate]);
 
         if ($action === 'created') {
-            // Tạo mới
+            // Cập nhật khi tạo mới đơn hàng
             $statistic->profit += $order->total_amount;
             $statistic->total_order += 1;
-            $statistic->quantity += 1; 
+            $statistic->quantity += 1;
         } elseif ($action === 'deleted') {
-            // Xóa đơn hàng
+            // Cập nhật khi xóa đơn hàng
             $statistic->profit -= $order->total_amount;
             $statistic->total_order -= 1;
             $statistic->quantity -= 1;
-        } else {
-            // Cập nhật đơn hàng
-            // Có thể thêm logic cập nhật ở đây nếu cần thiết
+        } elseif ($action === 'updated') {
+          
+            $originalOrder = $order->getOriginal();
+            $statistic->profit -= $originalOrder['total_amount'];
+            $statistic->profit += $order->total_amount;
         }
-        // dd($statistic);
 
         $statistic->save();
     }
+
     protected static function updateStatisticsAfterDelete($order)
-{
-    // Lấy ngày đặt hàng của đơn hàng đã xóa
-    $orderDate = Carbon::createFromFormat('Y-m-d H:i:s', $order->order_date)->startOfDay();
-
-    // Tìm bản ghi thống kê cho ngày đó
-    $statistic = Statistic::where('order_date', $orderDate)->first();
-
-    if ($statistic) {
-        // Cập nhật dữ liệu thống kê
-        $statistic->profit -= $order->total_amount;
-        $statistic->total_order -= 1;
-        $statistic->quantity -= 1; // giả sử quantity là số lượng đơn hàng
-
-        $statistic->save();
+    {
+        // Chuyển đổi order_date thành dạng Carbon
+        $orderDate = Carbon::createFromFormat('Y-m-d H:i:s', $order->order_date)->startOfDay();
+    
+        // Tìm bản ghi thống kê
+        $statistic = Statistic::where('order_date', $orderDate)->first();
+    
+        if ($statistic) {
+            // Cập nhật thống kê
+            $statistic->profit -= $order->total_amount;
+            $statistic->total_order -= 1;
+            $statistic->quantity -= 1;
+    
+            $statistic->save();
+        }
     }
-}
+    
 }

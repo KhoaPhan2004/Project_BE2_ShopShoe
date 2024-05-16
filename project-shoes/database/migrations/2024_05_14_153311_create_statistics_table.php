@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('statistics', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('order_date'); // Thay đổi kiểu dữ liệu từ 'date' sang 'dateTime'
-            $table->decimal('profit', 10, 2); // Lợi nhuận
-            $table->integer('quantity'); // Số lượng
-            $table->integer('total_order'); // Tổng đơn hàng
-            $table->timestamps(); // Thời gian tạo và cập nhật
+            $table->dateTime('order_date'); 
+            $table->decimal('profit', 10, 2); 
+            $table->integer('quantity'); 
+            $table->integer('total_order'); 
+            $table->timestamps();
 
             // Indexes
             $table->index('order_date');
