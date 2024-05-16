@@ -104,6 +104,11 @@
         'driver' => 'session',
         'provider' => 'users',
       ),
+      'cus' => 
+      array (
+        'driver' => 'session',
+        'provider' => 'customers',
+      ),
       'sanctum' => 
       array (
         'driver' => 'sanctum',
@@ -116,6 +121,11 @@
       array (
         'driver' => 'eloquent',
         'model' => 'App\\Models\\User',
+      ),
+      'customers' => 
+      array (
+        'driver' => 'eloquent',
+        'model' => 'App\\Models\\Customer',
       ),
     ),
     'passwords' => 

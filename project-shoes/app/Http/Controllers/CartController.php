@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\OrderDetails;
+use App\Models\Orders;
 use App\Models\Product;
-
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -15,8 +17,10 @@ class CartController extends Controller
     }
 
     public function view(Cart $cart){
-       
+        
         return view('cart-view',compact('cart'));
+       
+        
     }
     public function deleteCart($id,Cart $cart){
         $cart->delete($id);
@@ -32,4 +36,7 @@ class CartController extends Controller
         $cart->clear();
         return redirect()->route('cart.view')->with('warning','xóa sản phẩm khỏi giỏ hàng thành công');
     }
+
+    
+
 }
