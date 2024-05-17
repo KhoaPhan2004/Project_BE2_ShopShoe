@@ -1,43 +1,45 @@
-<!-- admin.order.create.blade.php -->
-
 @extends('admin.admin')
 
 @section('main')
 <div class="container">
     <div class="header">
-        <h1>Create New Order</h1>
+        <h1>Tạo Đơn Hàng</h1>
     </div>
     <hr>
 
-    <form action="{{ route('order.store')}}" method="POST" role="form">
-        @csrf
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="user_id">User ID</label>
-                <input type="number" class="form-control" name="user_id" id="user_id" placeholder="Enter User ID">
-            </div>
-            <div class="form-group ps">
-                <label for="order_date">Order Date</label>
-                <input type="datetime-local" class="form-control" name="order_date" id="order_date">
-            </div>
-            <div class="form-group">
-                <label for="status">Status</label>
-                <input type="text" class="form-control" name="status" id="status" placeholder="Enter Status">
-            </div>
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address">
-            </div>
-        </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form action="{{ route('order.store')}}" method="POST" role="form">
+                @csrf
+                <div class="form-group">
+                    <label for="user_id">User ID</label>
+                    <input type="number" class="form-control" name="user_id" id="user_id" placeholder="Enter User ID" required>
+                </div>
+                <div class="form-group">
+                    <label for="order_date">Order Date</label>
+                    <input type="datetime-local" class="form-control" name="order_date" id="order_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <input type="text" class="form-control" name="status" id="status" placeholder="Enter Status" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" required>
+                </div>
 
-        <div class="button-add">
-            <button type="submit" class="btn-add btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
-    </form>
+    </div>
 
     @if(session()->has('success'))
-    <div class="alert alert-success">
-        {{ session()->get('success') }}
+    <div class="row mt-3">
+        <div class="col-md-8 offset-md-2">
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        </div>
     </div>
     @endif
 </div>

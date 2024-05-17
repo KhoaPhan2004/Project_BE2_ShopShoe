@@ -62,6 +62,9 @@
                     <li class="nav-item mb-2"> <a href="{{ route('admin.index') }}">Home</a>
                     <li class="nav-item mb-2"><a href="{{ route('order.index') }}" class="nav-link text-white">Đơn Hàng</a></li>
                     </li>
+                    </li>
+                    <li class="nav-item mb-2"> <a href="{{ route('order_details.index') }}">Chi tiết đơn hàng</a>
+                    </li>
                     <li class="nav-item mb-2"> <a href="{{ route('brand.index') }}">Brand</a>
                     </li>
                     <li class="nav-item mb-2"> <a href="{{ route('origin.index') }}">Origins</a>

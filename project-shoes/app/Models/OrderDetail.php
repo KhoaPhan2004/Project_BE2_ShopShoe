@@ -10,17 +10,19 @@ class OrderDetail extends Model
     use HasFactory;
     protected $table = 'order_details'; // Đặt tên bảng tương ứng với bảng trong cơ sở dữ liệu
 
-    protected $fillable = [ // Định nghĩa các trường có thể gán giá trị
+    protected $fillable = [
         'order_id',
         'product_id',
         'quantity',
-        // Các trường khác nếu có
+        'created_at',
+        'updated_at'
     ];
 
     // Định nghĩa các mối quan hệ với các model khác nếu cần thiết
-    public function product()
-    {
-        return $this->belongsTo(Product::class, 'product_id');
-    }
+    public $timestamps = true;
+
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+   
 
 }
