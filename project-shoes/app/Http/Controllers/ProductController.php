@@ -68,7 +68,7 @@ class ProductController extends Controller
 
         // Tạo một sản phẩm mới và lưu vào cơ sở dữ liệu
         if (Product::create($data)) {
-            return redirect()->route('product.index')->with('success', 'Thêm mới thành công');
+            return redirect()->route('admin.product.index')->with('success', 'Thêm mới thành công');
         } else {
             // Xử lý trường hợp lưu thất bại
         }
@@ -163,7 +163,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('product.index')->with('success', 'Product updated successfully');
+        return redirect()->route('admin.product.index')->with('success', 'Product updated successfully');
     }
     /**
      * Remove the specified resource from storage.
@@ -171,7 +171,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('product.index');
+        return redirect()->route('admin.product.index');
     }
     public function sort($order)
     {

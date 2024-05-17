@@ -48,7 +48,7 @@ class BrandController extends Controller
     
         Brand::create($data);
     
-        return redirect()->route('brand.index')->with('success', 'Thêm thành công');
+        return redirect()->route('admin.brand.index')->with('success', 'Thêm thành công');
 
     }
     
@@ -86,7 +86,7 @@ class BrandController extends Controller
     
         $brand->update($data);
     
-        return redirect()->route('brand.index')->with('success', 'Sửa thành công');
+        return redirect()->route('admin.brand.index')->with('success', 'Sửa thành công');
 
         
     }
@@ -98,7 +98,7 @@ class BrandController extends Controller
     public function destroy(Brand $brand)
     {
         $brand->delete();
-        return redirect()->route('brand.index')->with('success', 'Xóa thành công');
+        return redirect()->route('admin.brand.index')->with('success', 'Xóa thành công');
 
 
     }
