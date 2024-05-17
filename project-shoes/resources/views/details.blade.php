@@ -20,7 +20,6 @@
 <div class="container mt-2">
     <div class="name">
         <h1>Chi tiết sản phẩm </h1>
-
     </div>
     <div class="card shadow">
         <div class="card-header">
@@ -43,6 +42,32 @@
         </div>
     </div>
 
+    <!-- Form thêm bình luận -->
+    <form action="{{ route('comments.store') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea name="comment" id="comment" class="form-control" rows="4" required></textarea>
+        </div>
+        <input type="hidden" name="product_id" value="{{ $product->id }}">
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+
+    @foreach($product->comments as $comment)
+    <div class="mb-4">
+        <h5>{{ $comment->user->name }} <small class="text-muted">{{ $comment->created_at->format('d M Y') }}</small></h5>
+        <p>{{ $comment->comment }}</p>
+        <div class="btn-group" role="group" aria-label="Comment Actions">
+        <a href="{{ route('comment.edit', $comment->id) }}" class="btn btn-warning">Edit</a>
+            <form action="{{ route('comment.destroy', $comment->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+    @endforeach
+
 
 
     <div class="row-product shadow">
@@ -55,7 +80,6 @@
                     </div>
                     <div class="card-body">
                         <img src="{{ asset('images/' . $product->image_url) }}" alt="{{ $product->product_name }}" class="img-fluid">
-
                         <p>Giá: $2.000.000VND</p>
                         <a href="#" class="btn btn-primary">Chi tiết</a>
                     </div>

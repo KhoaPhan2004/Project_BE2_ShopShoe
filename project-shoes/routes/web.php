@@ -12,6 +12,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Models\Brands;
 use App\Http\Controllers\StatisticController;
+use App\Http\Controllers\CommentController;
+
 use App\Models\Customer;
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +34,15 @@ Route::group(['prefix' => ''], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('/product/{id}', [HomeController::class, 'show'])->name('home.show');
     Route::get('/brand/{id}', [HomeController::class, 'productsByBrand'])->name('brand.products');
+  
+    
 });
 
+  //comments
+  Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+  Route::get('/comment/{id}/edit', [CommentController::class, 'edit'])->name('comment.edit');
+  Route::put('/comments/{id}', [CommentController::class, 'update'])->name('comment.update');
+  Route::delete('/comments/{id}', [CommentController::class, 'destroy'])->name('comment.destroy');
 
 Route::get('login', [UserController::class, 'login'])->name('login');
 Route::post('login', [UserController::class, 'check_login']);
@@ -61,6 +70,7 @@ Route::group(['prefix' => 'order', 'middleware' => 'customer'], function () {
     Route::post('/checkout', [CheckoutController::class, 'post_checkout']);
 });
 
+
 Route::get('/filter-statistics', [StatisticController::class, 'filter']);
 
 //login của admin
@@ -71,10 +81,12 @@ Route::get('admin/sing-out', [AdminController::class, 'singOut'])->name('admin.s
 
 Route::get('admin/error', [AdminController::class, 'error'])->name('admin.error');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth','as'=>'admin.'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'as' => 'admin.'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     //này là routes sort mới nhá
     Route::get('products/sort/{order}', [ProductController::class, 'sort'])->name('products.sort');
+
+
 
     Route::get('admin/statistics', [AdminController::class, 'statistics'])->name('admin.statistics');
 

@@ -18,5 +18,9 @@ class Product extends Model
         'origin_id',
         'size',
     ];
-    
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
