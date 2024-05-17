@@ -39,7 +39,7 @@ class AdminController extends Controller
     {
        Auth::logout();
        return redirect()->route('admin.login');
-
+    }
     public function statistics()
     {
         

@@ -7,6 +7,7 @@ use App\Models\OrderDetails;
 use App\Models\Orders;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Brand;
 
 class CartController extends Controller
 {
@@ -17,8 +18,9 @@ class CartController extends Controller
     }
 
     public function view(Cart $cart){
-        
-        return view('cart-view',compact('cart'));
+        $brands = Brand::pluck('brand_name', 'id');
+
+        return view('cart-view',compact('cart','brands'));
        
         
     }
