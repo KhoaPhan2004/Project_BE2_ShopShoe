@@ -1,17 +1,5 @@
-@extends('admin.admin')
 
-@section('styles')
-<style>
-     .container{
-        background-image: url('../../../public/images/anhnen.png');
-        background-size: cover;
-        background-position: center;
-        color: white;
-    }
-</style>
-@endsection
-
-@section('main')
+<div>
 <?php 
 $code = isset($code) ? $code :404;
 $title = isset($title) ? $title :'not found';
@@ -25,5 +13,5 @@ $message = isset($message) ? $message :'Page not found';
       
     </div>
 </div>
+</div>
 
-@stop()
