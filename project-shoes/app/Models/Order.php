@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Statistic;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Order extends Model
 {
@@ -73,5 +74,17 @@ class Order extends Model
             $statistic->save();
         }
     }
+     public function calculateTotalPrice()
+    {
+        $total = 0;
+        foreach ($this->details as $detail) {
+            $total += $detail->product->price * $detail->quantity;
+        }
+        return $total;
+    }
+    public function orderDetails()
+{
+    return $this->hasMany(OrderDetail::class);
+}
     
 }

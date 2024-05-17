@@ -65,14 +65,14 @@ use Illuminate\Support\Facades\Auth;
             <div class="col-lg-3 navbar-left">
                 <h1>Admin</h1>
                 <ul class="nav flex-column">
-                @if($user->can('admin.admin.index'))
-                    <li class="nav-item mb-2"> <a href="{{ route('admin.admin.index') }}">Home</a>
+                    <li class="nav-item mb-2"> <a href="{{ route('admin.index') }}">Home</a>
                     </li>
                     @endif
                     @if($user->can('admin.brand.index'))
                     <li class="nav-item mb-2"> <a href="{{ route('admin.brand.index') }}">Brand</a>
                     </li>
                     @endif
+                    
                     @if($user->can('admin.user.index'))
                     <li class="nav-item mb-2"> <a href="{{ route('admin.user.index') }}">User</a>
                     </li>
@@ -94,7 +94,11 @@ use Illuminate\Support\Facades\Auth;
                     @endif
                     <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Setting</a></li>
                     <li class="nav-item mb-2"><a href="{{ route('admin.singout') }}" class="nav-link text-white">SingOut</a></li>
-
+					<li class="nav-item mb-2"><a href="{{ route('order.index') }}" class="nav-link text-white">Đơn Hàng</a></li>
+                    </li>
+                    </li>
+                    <li class="nav-item mb-2"> <a href="{{ route('order_details.index') }}">Chi tiết đơn hàng</a>
+                    </li>
                 </ul>
 
             </div>

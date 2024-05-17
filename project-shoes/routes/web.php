@@ -10,6 +10,10 @@ use App\Http\Controllers\OriginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderDetailController;
+
 use App\Models\Brands;
 use App\Http\Controllers\StatisticController;
 use App\Models\Customer;
@@ -42,6 +46,18 @@ Route::post('login', [UserController::class, 'check_login']);
 Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'check_register']);
 
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+
+Route::get('/order/{id}', [OrderController::class, 'showOrderDetails']);
+
+Route::get('/order/{userId}', [OrderController::class, 'showOrderDetails']);
+Route::post('/order/{orderId}/edit', [OrderController::class, 'editOrder']);
+Route::post('/order/{orderId}/delete', [OrderController::class, 'deleteOrder']);
+Route::delete('/order/{id}', [OrderController::class, 'delete'])->name('order.delete');
+Route::get('/order/{userId}', [OrderController::class, 'showOrderDetails'])->name('order.showOrderDetails');
+
+Route::post('/order/{orderId}/delete', [OrderController::class, 'deleteOrder']);
 
 // logout
 Route::get('/logout', [HomeController::class, 'singOutUser'])->name('logout');
@@ -84,6 +100,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth','as'=>'admin.'], funct
         'product' => ProductController::class,
         'role' => RoleController::class,
         'user' => UserController::class,
+        'order' => OrderController::class,
+        'order_details' => OrderDetailController::class,
 
     ]);
 });

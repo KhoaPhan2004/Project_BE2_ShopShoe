@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class OrderDetails extends Model
 {
     use HasFactory;
+     protected $table = 'order_details'; // Đặt tên bảng tương ứng với bảng trong cơ sở dữ liệu
     public $timestamp = false;
 
     /**
@@ -21,7 +22,10 @@ class OrderDetails extends Model
         'quantity',
         'price',
     ];
-
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'product_id');
+    }
   
     
 }

@@ -1,5 +1,3 @@
-@extends('user_header_footer')
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,10 +15,55 @@
 </head>
 
 <body>
-    @section('main')
 
     <section>
+        <header>
+            <nav>
+                <div class="logo">
+                    <h1>Shoe<span>s</span></h1>
+                </div>
 
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Products">Products</a></li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Brands <i class="bi bi-caret-down-fill"></i></button>
+                        <div class="dropdown-content">
+                           
+                        </div>
+                    </div>
+
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Review">Review</a></li>
+                    <li><a href="#Servises">Servises</a></li>
+                </ul>
+
+                <div class="icons">
+                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="dropdown-icon">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="dropdown-content-icon">
+                            <a href="{{ route('login') }}"><i class="bi bi-person-circle"></i>
+                                Login</a>
+                            <a href="#"><i class="bi bi-box-arrow-in-right"></i>Logout</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </nav>
+        </header>
+        <div class="container mt-5 pt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <form action="{{ route('search') }}" method="GET" class="d-flex">
+        <input class="form-control me-2" type="search" name="keyword" placeholder="Search by name or brand" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</div>
         <div class="main" id="Home">
             <div class="main_content">
                 <div class="main_text">
@@ -52,34 +95,37 @@
 
 
     <!--Products-->
-
     <div class="products" id="Products">
-        <h1>Products</h1>
+    <h1>Products</h1>
 
-        <div class="box">
-            <!-- resources/views/index.blade.php -->
-
+    <div class="box">
+    @if($products->count() > 0)
             @foreach($products as $product)
-            <div class="card">
-                <div class="small_card">
-                    <i class="fa-solid fa-heart"></i>
-                    <i class="fa-solid fa-share"></i>
-                </div>
-                <div class="image">
-                    <img src="{{ asset('images/' . $product->image_url) }}">
-                </div>
-                <div class="products_text">
-                    <h2>{{ $product->product_name }}</h2>
-                    <!-- <p>{{ $product->description }}</p> -->
-                    <h3>${{ $product->price }}</h3>
-                    <a href="{{ route('home.show', $product->id) }}" class="btn">Xem Chi Tiết</a>
-                </div>
+        <div class="card">
+            <div class="small_card">
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-share"></i>
             </div>
-            @endforeach
 
+            <div class="image">
+                <img src="{{ asset('images/' . $product->image_url) }}">
+            </div>
+
+            <div class="products_text">
+                <h2>{{ $product->product_name }}</h2>
+                <p>{{ $product->description }}</p>
+                <h3>${{ $product->price }}</h3>
+                <a href="#" class="btn">Add To Cart</a>
+            </div>
         </div>
+        @endforeach
+        @else
+        <div class="alert alert-warning" role="alert">
+            Không tìm thấy sản phẩm nào!
+        </div>
+        @endif
     </div>
-
+</div>
 
 
 
@@ -137,21 +183,19 @@
     <!--Review-->
 
     <div class="review" id="Review">
-        <h1>customers say about shoes!<span>review</span></h1>
-        <h1>
-            #FEEDBACK
-        </h1>
+        <h1>Customer's<span>review</span></h1>
+
         <div class="review_box">
             <div class="review_card">
                 <div class="card_top">
                     <div class="profile">
 
                         <div class="profile_image">
-                            <img src="image/canh.jpg">
+                            <img src="image/girl_dp1.jpg">
                         </div>
 
                         <div class="name">
-                            <strong>Viết Cảnh</strong>
+                            <strong>Ranidi Lochana</strong>
 
                             <div class="like">
                                 <i class="fa-solid fa-star"></i>
@@ -166,10 +210,9 @@
                 </div>
                 <div class="comment">
                     <p>
-                        Đẹp quá đê!! <br>
-                        mua ngay thôi <br>
-                        Đẹp quá đê!! <br>
-                        mua ngay thôi <br>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, amet nesciunt voluptatem cum
+                        architecto ipsum vero nulla voluptatibus dolorum modi assumenda eum? Aliquid inventore velit ipsa
+                        repellat numquam atque dolores!
                     </p>
                 </div>
             </div>
@@ -198,10 +241,9 @@
                 </div>
                 <div class="comment">
                     <p>
-                        Shoes.vn bán hàng chính hãng, giá rất
-                        ok, tôi đã mua một đôi giày chạy bộ của
-                        Nike đi rất êm và thích <br>
-                        Nike đi rất êm và thích.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, amet nesciunt voluptatem cum
+                        architecto ipsum vero nulla voluptatibus dolorum modi assumenda eum? Aliquid inventore velit ipsa
+                        repellat numquam atque dolores!
                     </p>
                 </div>
             </div>
@@ -230,11 +272,9 @@
                 </div>
                 <div class="comment">
                     <p>
-                        Tôi đã mua cho cả 2 vợ chồng giày của
-                        Shoes.vn và thật sự nó vô cùng chất
-                        lượng. Hàng đảm bảo chính hãng 100% và
-                        chính sách bảo hành rất yên tâm ạ. Cảm
-                        on Myshoes.vn!
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, amet nesciunt voluptatem cum
+                        architecto ipsum vero nulla voluptatibus dolorum modi assumenda eum? Aliquid inventore velit ipsa
+                        repellat numquam atque dolores!
                     </p>
                 </div>
             </div>
@@ -266,10 +306,9 @@
                 </div>
                 <div class="comment">
                     <p>
-                        Mua hàng của Shoes.vn thì rất yên tâm rồi
-                        mình mua luôn 2 đôi vì nhiều mẫu đẹp
-                        quá! <br>
-                        Sẽ ủng hộ shop thường xuyên.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, amet nesciunt voluptatem cum
+                        architecto ipsum vero nulla voluptatibus dolorum modi assumenda eum? Aliquid inventore velit ipsa
+                        repellat numquam atque dolores!
                     </p>
                 </div>
             </div>
@@ -298,10 +337,9 @@
                 </div>
                 <div class="comment">
                     <p>
-                        Tìm một đôi giày ưng ý không hề dễ dàng,
-                        nhưng từ khi biết đến Shoes.vn thì hoàn
-                        toàn tin tưởng, nhiều mẫu đẹp và đã chọn
-                        được một em Adidas ưng ý!
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, amet nesciunt voluptatem cum
+                        architecto ipsum vero nulla voluptatibus dolorum modi assumenda eum? Aliquid inventore velit ipsa
+                        repellat numquam atque dolores!
                     </p>
                 </div>
             </div>
@@ -330,15 +368,14 @@
                 </div>
                 <div class="comment">
                     <p>
-                        Mới mua combo chăm sóc giày của
-                        Shoes sử dụng rất tốt, vệ sinh giày siêu
-                        sạch, xịt nano rất hiệu quả khi đi trời mưa.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, amet nesciunt voluptatem cum
+                        architecto ipsum vero nulla voluptatibus dolorum modi assumenda eum? Aliquid inventore velit ipsa
+                        repellat numquam atque dolores!
                     </p>
                 </div>
             </div>
 
         </div>
-
 
     </div>
 
@@ -420,10 +457,53 @@
 
     <!--Footer-->
 
+    <footer>
+        <div class="footer_main">
+            <div class="tag">
+                <h1>Contact</h1>
+                <a href="#"><i class="fa-solid fa-house"></i>123/Colombo/Sri Lanka</a>
+                <a href="#"><i class="fa-solid fa-phone"></i>+84 42779848</a>
+                <a href="#"><i class="fa-solid fa-envelope"></i>huynhvietcanh2004@gmail.com</a>
+            </div>
 
+            <div class="tag">
+                <h1>Get Help</h1>
+                <a href="#" class="center">FAQ</a>
+                <a href="#" class="center">Shipping</a>
+                <a href="#" class="center">Returns</a>
+                <a href="#" class="center">Payment Options</a>
+            </div>
+
+            <div class="tag">
+                <h1>Our Stores</h1>
+                <a href="#" class="center">Sri Lanka</a>
+                <a href="#" class="center">USA</a>
+                <a href="#" class="center">India</a>
+                <a href="#" class="center">Japan</a>
+            </div>
+
+            <div class="tag">
+                <h1>Follw Us</h1>
+                <div class="social_link">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="tag">
+                <h1>Newsletter</h1>
+                <div class="search_bar">
+                    <input type="text" placeholder="You email id here">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 
 
 </body>
 
 </html>
-@stop()
