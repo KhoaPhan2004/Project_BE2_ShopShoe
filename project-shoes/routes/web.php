@@ -30,7 +30,7 @@ use App\Models\Customer;
 Route::group(['prefix' => ''], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('/product/{id}', [HomeController::class, 'show'])->name('home.show');
-
+    Route::get('/brand/{id}', [HomeController::class, 'productsByBrand'])->name('brand.products');
 });
 
 
@@ -41,21 +41,23 @@ Route::post('login', [UserController::class, 'check_login']);
 Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'check_register']);
 
+
+// logout
+Route::get('/logout', [HomeController::class, 'singOutUser'])->name('logout');
+
 //cart
-Route::group(['prefix'=>'cart','middleware'=>'customer'],function(){
-    Route::get('/',[CartController::class,'view'])->name('cart.view');
-    Route::get('/add/{product}',[CartController::class,'addToCart'])->name('cart.add');
-    Route::get('/delete/{id}',[CartController::class,'deleteCart'])->name('cart.delete');
-    Route::get('/update/{id}',[CartController::class,'updateCart'])->name('cart.update');
-    Route::get('/clear',[CartController::class,'clearCart'])->name('cart.clear');
-  
-    
+Route::group(['prefix' => 'cart', 'middleware' => 'customer'], function () {
+    Route::get('/', [CartController::class, 'view'])->name('cart.view');
+    Route::get('/add/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::get('/delete/{id}', [CartController::class, 'deleteCart'])->name('cart.delete');
+    Route::get('/update/{id}', [CartController::class, 'updateCart'])->name('cart.update');
+    Route::get('/clear', [CartController::class, 'clearCart'])->name('cart.clear');
 });
 
-Route::group(['prefix'=>'order','middleware'=>'customer'],function(){
-    Route::get('/checkout',[CheckoutController::class,'checkout'])->name('order.checkout');
-    Route::get('/history',[CheckoutController::class,'history'])->name('order.history');
-    Route::post('/checkout',[CheckoutController::class,'post_checkout']);
+Route::group(['prefix' => 'order', 'middleware' => 'customer'], function () {
+    Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('order.checkout');
+    Route::get('/history', [CheckoutController::class, 'history'])->name('order.history');
+    Route::post('/checkout', [CheckoutController::class, 'post_checkout']);
 });
 
 Route::get('/filter-statistics', [StatisticController::class, 'filter']);
@@ -70,7 +72,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     //này là routes sort mới nhá
     Route::get('products/sort/{order}', [ProductController::class, 'sort'])->name('products.sort');
-    
+
     Route::get('admin/statistics', [AdminController::class, 'statistics'])->name('admin.statistics');
 
     Route::resources([
@@ -80,4 +82,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     ]);
 });
-

@@ -877,3 +877,13 @@ footer .footer_main .tag .search_bar button{
 .dropdown-icon:hover .dropdown-content-icon {
     display: block;
 }
+.name-brand {
+    text-align: center;
+    margin: 100px 0;
+    background: linear-gradient(to right, #c72092, #6c14d0);
+    -webkit-background-clip: text; /* Thêm để clip gradient theo văn bản */
+    -webkit-text-fill-color: transparent; /* Thêm để ẩn màu chữ mặc định */
+}
+.name-brand h1{
+    font-size: 50px;
+}

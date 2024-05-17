@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-XXX" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<!-- <style>
+    <!-- <style>
     footer {
     position: fixed;
     bottom: 0;
@@ -40,14 +40,18 @@
                     <div class="dropdown">
                         <button class="dropbtn">Brands <i class="bi bi-caret-down-fill"></i></button>
                         <div class="dropdown-content">
-                            @foreach($brands as $id => $brand)
-                            <a href="#">{{ $brand }}</a>
+                            @foreach($brands as $brand)
+                            @if(isset($brand->id))
+                            <a href="{{ route('brand.products', $brand->id) }}">{{ $brand->brand_name }}</a>
+                            @endif
                             @endforeach
+
+
                         </div>
                     </div>
+
                     <li><a href="#About">About</a></li>
                     <li><a href="#Review">Review</a></li>
-                    <li><a href="#Services">Services</a></li>
                     <li><a href="{{ route('order.history') }}">My order</a></li>
                 </ul>
 
@@ -57,13 +61,15 @@
                     <div class="dropdown-icon">
                         <i class="fa-solid fa-user"></i>
                         <div class="dropdown-content-icon">
-                            <a href="{{ route('login') }}"><i class="bi bi-person-circle"></i>
-                                Login</a>
-                            <a href="#"><i class="bi bi-box-arrow-in-right"></i>Logout</a>
+                            @guest
+                            <a href="{{ route('login') }}"><i class="bi bi-person-circle"></i> Login</a>
+                            @else
+                            <a href="{{ route('logout') }}"><i class="bi bi-box-arrow-in-right"></i> Logout</a>
+                            @endguest
                         </div>
                     </div>
-
                 </div>
+
 
             </nav>
         </header>
