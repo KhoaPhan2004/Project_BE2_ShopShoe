@@ -11,7 +11,7 @@
     <hr>
     <link href="{{ asset('css/origin.css') }}" rel="stylesheet">
 
-    <form action="{{ route('origin.store')}}" method="POST" role="form">
+    <form action="{{ route('admin.origin.store')}}" method="POST" role="form">
 
         @csrf
         <div class="col-md-12">

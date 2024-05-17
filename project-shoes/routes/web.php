@@ -8,6 +8,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OriginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Models\Brands;
 use App\Http\Controllers\StatisticController;
@@ -64,7 +65,9 @@ Route::post('admin/login', [AdminController::class, 'check_login']);
 //singout
 Route::get('admin/sing-out', [AdminController::class, 'singOut'])->name('admin.singout');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::get('admin/error', [AdminController::class, 'error'])->name('admin.error');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth','as'=>'admin.'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     //này là routes sort mới nhá
     Route::get('products/sort/{order}', [ProductController::class, 'sort'])->name('products.sort');
@@ -75,6 +78,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         'brand' => BrandController::class,
         'origin' => OriginController::class,
         'product' => ProductController::class,
+        'role' => RoleController::class,
+        'user' => UserController::class,
 
     ]);
 });

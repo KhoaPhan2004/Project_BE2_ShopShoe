@@ -6,7 +6,7 @@
         <h1>Danh Sách Nguồn Ngốc</h1>
 
     </div>
-    <a href="{{ route('origin.create') }}" class="btn btn-success">Thêm</a>
+    <a href="{{ route('admin.origin.create') }}" class="btn btn-success">Thêm</a>
     <hr>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -37,9 +37,9 @@
                 <td>{{$origin -> created_at}}</td>
 
                 <td>
-                    <form action="{{ route('origin.destroy', $origin->id)}}" method="post">
+                    <form action="{{ route('admin.origin.destroy', $origin->id)}}" method="post">
                         @csrf @method('DELETE')
-                        <a href="{{ route('origin.edit',$origin->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-fill"></i>
+                        <a href="{{ route('admin.origin.edit',$origin->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-fill"></i>
                         Edit</a>
                         <button class="btn btn-sm btn-danger "><i class="bi bi-trash3-fill"></i>
                             Delete</button>

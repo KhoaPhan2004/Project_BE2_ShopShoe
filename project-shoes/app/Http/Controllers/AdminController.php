@@ -20,26 +20,41 @@ class AdminController extends Controller
 {
     public function index()
     {
+        
         return view('admin.index');
     }
 
-
+    public function error(){
+        $code = request()->code;
+        $errors =[
+            'code'=>403,
+            'title'=>'Unauthorized',
+            'message'=>'Unauthorized...!'
+        ];
+        return view('admin.error',$errors);
+    }
     public function login()
     {
         return view('admin.loginAdmin');
     }
     public function check_login(Request $request)
     {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 1])) {
-            return redirect()->route('admin.index');
+        // if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 1])) {
+        //     return redirect()->route('admin.index');
+        // }
+        // return redirect()->back()->with('err', 'Sai thông tin ');
+        if (Auth::attempt($request->only('email','password'))) {
+            return redirect()->route('admin.admin.index');
+        }else{
+            return redirect()->route('admin.login');
         }
-        return redirect()->back()->with('err', 'Sai thông tin ');
+        
     }
     public function singOut()
     {
        Auth::logout();
        return redirect()->route('admin.login');
-
+    }
     public function statistics()
     {
         

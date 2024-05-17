@@ -3,7 +3,7 @@
 
 
 <h1>Sản Phẩm</h1>
-<a href="{{ route('product.create') }}" class="btn btn-success">Thêm</a>
+<a href="{{ route('admin.product.create') }}" class="btn btn-success">Thêm</a>
 <hr>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
 <link href="{{ asset('css/admin_product.css') }}" rel="stylesheet">
@@ -20,8 +20,8 @@
                         <span class="mr-2">price</span>
                         <i class="bi bi-caret-down-fill dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('products.sort', 'desc') }}">Giảm dần</a>
-                            <a class="dropdown-item" href="{{ route('products.sort', 'asc') }}">Tăng dần</a>
+                            <a class="dropdown-item" href="{{ route('admin.products.sort', 'desc') }}">Giảm dần</a>
+                            <a class="dropdown-item" href="{{ route('admin.products.sort', 'asc') }}">Tăng dần</a>
                         </div>
 
                     </div>
@@ -52,9 +52,9 @@
             <td>{{$product -> size}}</td>
 
             <td>
-                <form action="{{ route('product.destroy', $product->id)}}" method="post">
+                <form action="{{ route('admin.product.destroy', $product->id)}}" method="post">
                     @csrf @method('DELETE')
-                    <a href="{{ route('product.edit',$product->id) }}" class="btn btn-sm btn-primary">Sua</a>
+                    <a href="{{ route('admin.product.edit',$product->id) }}" class="btn btn-sm btn-primary">Sua</a>
                     <button class="btn btn-sm btn-danger">Xoa</button>
 
                 </form>

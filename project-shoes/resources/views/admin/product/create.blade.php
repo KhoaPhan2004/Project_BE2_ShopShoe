@@ -24,7 +24,7 @@
 <h1>Add Product</h1>
 <hr>
 
-<form action="{{ route('product.store')}}" method="POST" role="form" enctype="multipart/form-data">
+<form action="{{ route('admin.product.store')}}" method="POST" role="form" enctype="multipart/form-data">
     @csrf
     <div class="col-lg-9">
         <div class="form-group">

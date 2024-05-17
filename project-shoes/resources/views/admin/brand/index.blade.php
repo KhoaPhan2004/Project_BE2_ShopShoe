@@ -14,7 +14,7 @@
     </div>
     @endif
 
-    <a href="{{ route('brand.create') }}" class="btn btn-success">Thêm</a>
+    <a href="{{ route('admin.brand.create') }}" class="btn btn-success">Thêm</a>
     <hr>
     <table class="table table-hover">
         <thead>
@@ -35,9 +35,9 @@
 
                 <!-- <td>{{$brand -> status == 0 ? 'tam an' : 'Hien thi'}}</td> -->
                 <td>
-                    <form action="{{ route('brand.destroy', $brand->id)}}" method="post">
+                    <form action="{{ route('admin.brand.destroy', $brand->id)}}" method="post">
                         @csrf @method('DELETE')
-                        <a href="{{ route('brand.edit',$brand->id) }}" class="btn btn-sm btn-primary"> <i class="bi bi-pencil-fill"></i>
+                        <a href="{{ route('admin.brand.edit',$brand->id) }}" class="btn btn-sm btn-primary"> <i class="bi bi-pencil-fill"></i>
                             Sua</a>
                         <button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i>Xoa</button>
 

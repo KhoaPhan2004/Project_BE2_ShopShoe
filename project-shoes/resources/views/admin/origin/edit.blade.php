@@ -9,7 +9,7 @@
     <hr>
     <link href="{{ asset('css/origin.css') }}" rel="stylesheet">
 
-    <form action="{{ route('origin.update',$origin->id)}}" method="POST" role="form">
+    <form action="{{ route('admin.origin.update',$origin->id)}}" method="POST" role="form">
         @csrf @method('PUT')
         <div class="col-md-12">
             <div class="form-group">

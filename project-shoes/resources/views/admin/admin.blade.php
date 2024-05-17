@@ -54,21 +54,44 @@
 </head>
 
 <body>
+    <?php
+
+use Illuminate\Support\Facades\Auth;
+
+ $user = Auth::user();  ?>
     <div class="container-fluid">
         <div class="row">
             <!-- Navbar bên trái -->
             <div class="col-lg-3 navbar-left">
                 <h1>Admin</h1>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"> <a href="{{ route('admin.index') }}">Home</a>
+                @if($user->can('admin.admin.index'))
+                    <li class="nav-item mb-2"> <a href="{{ route('admin.admin.index') }}">Home</a>
                     </li>
-                    <li class="nav-item mb-2"> <a href="{{ route('brand.index') }}">Brand</a>
+                    @endif
+                    @if($user->can('admin.brand.index'))
+                    <li class="nav-item mb-2"> <a href="{{ route('admin.brand.index') }}">Brand</a>
                     </li>
-                    <li class="nav-item mb-2"> <a href="{{ route('origin.index') }}">Origins</a>
+                    @endif
+                    @if($user->can('admin.user.index'))
+                    <li class="nav-item mb-2"> <a href="{{ route('admin.user.index') }}">User</a>
                     </li>
-                    <li class="nav-item mb-2"> <a href="{{ route('product.index') }}">Product</a>
+                    @endif
+                    @if($user->can('admin.origin.index'))
+                    <li class="nav-item mb-2"> <a href="{{ route('admin.origin.index') }}">Origins</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="{{ route('admin.statistics') }}">Thống Kê</a></li>
+                    @endif
+                    @if($user->can('admin.product.index'))
+                    <li class="nav-item mb-2"> <a href="{{ route('admin.product.index') }}">Product</a>
+                    </li>
+                    @endif
+                    @if($user->can('admin.role.index'))
+                    <li class="nav-item mb-2"> <a href="{{ route('admin.role.index') }}">Roles</a>
+                    </li>
+                    @endif
+                    @if($user->can('admin.admin.statistics'))
+                    <li class="nav-item mb-2"><a href="{{ route('admin.admin.statistics') }}">Thống Kê</a></li>
+                    @endif
                     <li class="nav-item mb-2"><a href="#" class="nav-link text-white">Setting</a></li>
                     <li class="nav-item mb-2"><a href="{{ route('admin.singout') }}" class="nav-link text-white">SingOut</a></li>
 
@@ -81,6 +104,7 @@
             </div>
         </div>
     </div>
+    @yield('js')
 </body>
 
 </html>

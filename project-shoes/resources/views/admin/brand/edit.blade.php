@@ -8,7 +8,7 @@
 <hr>
 <link href="{{ asset('css/brand.css') }}" rel="stylesheet">
 
-<form action="{{ route('brand.update',$brand->id)}}" method="POST" role="form">
+<form action="{{ route('admin.brand.update',$brand->id)}}" method="POST" role="form">
     @csrf @method('PUT')
     <div class="col-md-9">
         <div class="form-group">
