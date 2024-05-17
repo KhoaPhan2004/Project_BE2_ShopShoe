@@ -48,7 +48,7 @@ class OrderController extends Controller
 
     public function showOrderDetails($userId)
     {
-        // Lấy thông tin chi tiết đơn hàng cho người dùng cụ thể
+        // Lấy thông tin chi tiết đơn hàng cho người dùng 
         $orderDetails = DB::table('order_details')
                     ->join('orders', 'order_details.order_id', '=', 'orders.id')
                     ->join('users', 'orders.user_id', '=', 'users.id')
@@ -60,7 +60,6 @@ class OrderController extends Controller
     
         // Lấy danh sách ID của các đơn hàng từ chi tiết đơn hàng
         $orderIds = $orderDetails->pluck('order_id');
-    
         // Tính tổng tiền của mỗi đơn hàng
         $totalAmounts = [];
         foreach ($orderIds as $orderId) {
@@ -69,18 +68,14 @@ class OrderController extends Controller
                             ->sum(DB::raw('quantity * price'));
             $totalAmounts[$orderId] = $totalAmount;
         }
-    
         // Cập nhật tổng tiền vào cột total_amount của đơn hàng tương ứng
         foreach ($totalAmounts as $orderId => $totalAmount) {
             Order::where('id', $orderId)->update(['total_amount' => $totalAmount]);
         }
-    
         // Lấy danh sách ID của các sản phẩm từ chi tiết đơn hàng
         $productIds = $orderDetails->pluck('product_id');
-    
         // Lấy thông tin chi tiết của các sản phẩm
         $products = Product::whereIn('id', $productIds)->get();
-    
         return view('order_detail', ['orderDetails' => $orderDetails]);
     }
     /**
@@ -112,7 +107,6 @@ class OrderController extends Controller
             'address' => 'required|string|max:100',
         ]);
 
-        // Process request data and update the order
         $order->update($request->all());
 
         return redirect()->route('order.index')->with('success', 'Order updated successfully.');
@@ -121,33 +115,22 @@ class OrderController extends Controller
 
 
     /**
-     * Remove the specified resource from storage.
+     * xoa don hang
      */
     public function destroy($id)
     {
-        // Tìm đơn hàng bằng ID
         $order = Order::findOrFail($id);
-    
-        // Xóa đơn hàng
         $order->delete();
-    
         return redirect()->route('order.index')->with('success', 'Order deleted successfully.');
     }
     public function delete($id)
     {
-        // Tìm đơn hàng bằng ID
         $order = Order::findOrFail($id);
-    
-        // Lấy userId từ đơn hàng
         $userId = $order->user_id;
-    
         // Xóa tất cả các chi tiết đơn hàng liên quan
         $order->orderDetails()->delete();
-    
         // Xóa đơn hàng
         $order->delete();
-    
-        // Chuyển hướng đến route order/{userId} với tham số userId
         return redirect()->route('order.showOrderDetails', ['userId' => $userId])->with('success', 'Order deleted successfully.');
     }
 }

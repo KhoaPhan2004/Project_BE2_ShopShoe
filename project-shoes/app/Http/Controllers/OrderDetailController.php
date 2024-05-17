@@ -11,25 +11,24 @@ class OrderDetailController extends Controller
     public function create()
     {
         $products = Product::all();
-    
-        // Trả về view và truyền danh sách sản phẩm tới view
         return view('admin.order_details.create')->with('products', $products);
     }
     
     public function index()
     {
-        $orderDetails = OrderDetail::paginate(10); // Số lượng mục trên mỗi trang, thay đổi nếu cần
-    
+        $orderDetails = OrderDetail::paginate(10); // Số lượng mục trên mỗi trang
         return view('admin.order_details.index', compact('orderDetails'));
     }
+
     public function edit($id)
     {
         $orderDetail = OrderDetail::findOrFail($id);
         $products = Product::all();
         return view('admin.order_details.edit', compact('orderDetail', 'products'));
     }
+
     public function update(Request $request, $id)
-{
+    {
     // Validate the request data
     $validatedData = $request->validate([
         'order_id' => 'required|exists:orders,id',
@@ -49,11 +48,11 @@ class OrderDetailController extends Controller
 
     // Redirect về trang danh sách chi tiết đơn hàng
     return redirect()->route('order_details.index')->with('success', 'Order detail updated successfully');
-}
+    }
 
     // Xử lý việc thêm Order Detail
     public function store(Request $request)
-{
+    {
     // Validate the request data
     $validatedData = $request->validate([
         'order_id' => 'required|exists:orders,id',
@@ -70,10 +69,10 @@ class OrderDetailController extends Controller
 
     // Return response
     return redirect()->route('order_details.create')->with('success', 'Order detail added successfully');
-}
-// Xóa Order Detail
-public function destroy($id)
-{
+    }
+    // Xóa Order Detail
+    public function destroy($id)
+    {
     // Tìm chi tiết đơn hàng cần xóa
     $orderDetail = OrderDetail::findOrFail($id);
 
@@ -82,6 +81,6 @@ public function destroy($id)
 
     // Redirect về trang danh sách chi tiết đơn hàng
     return redirect()->route('order_details.index')->with('success', 'Order detail deleted successfully');
-}
+    }
 
 }
