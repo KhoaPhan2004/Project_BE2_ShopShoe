@@ -29,6 +29,8 @@ use App\Models\Customer;
 
 Route::group(['prefix' => ''], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
+    Route::get('/product/{id}', [HomeController::class, 'show'])->name('home.show');
+
 });
 
 
