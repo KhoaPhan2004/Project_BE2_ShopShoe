@@ -54,7 +54,10 @@
                     <li><a href="#Review">Review</a></li>
                     <li><a href="{{ route('order.history') }}">My order</a></li>
                 </ul>
-
+                <form action="{{ route('search') }}" method="GET" class="d-flex">
+                <input class="form-control me-2" type="search" name="keyword" placeholder="Search by name or brand" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                 </form>
                 <div class="icons">
                     <i class="fa-solid fa-heart"></i>
                     <i class="fa-solid fa-cart-shopping"></i>
@@ -72,6 +75,7 @@
 
 
             </nav>
+            
         </header>
 
 
