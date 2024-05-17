@@ -13,11 +13,9 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::orderBy('id', 'DESC')->get();
-
-        $brands = Brand::all();
-
-
-
+		$brands = Brand::all();
+        //$brands = Brand::pluck('brand_name', 'id'); 
+        
         return view('index', compact('products', 'brands'));
     }
     public function show($id)

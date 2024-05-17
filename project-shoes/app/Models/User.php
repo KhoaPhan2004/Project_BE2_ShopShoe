@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Role;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -46,5 +46,30 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function hasPermission($route){
+        $routes = $this->routes();
+        
+        return in_array($route,$routes) ? true:false;
+    }
+    public function routes(){
+        $data =[];
+        foreach($this->getRoles as $role){
+            $permission = json_decode($role->permissions);
+            foreach($permission as $per){
+                if (!in_array($per,$data)) {
+                    array_push($data,$per);
+                }
+                
+            }
+           
+           
+        }
+        
+        return $data;
+    }
+    public function getRoles(){
+        return $this->belongsToMany(Role::class,'user_roles','user_id','role_id');
     }
 }

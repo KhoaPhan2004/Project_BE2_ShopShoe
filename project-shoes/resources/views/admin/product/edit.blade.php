@@ -4,7 +4,7 @@
 <h1>Edit Product</h1>
 <hr>
 
-<form action="{{ route('product.update', $product->id) }}" method="POST" role="form" enctype="multipart/form-data">
+<form action="{{ route('admin.product.update', $product->id) }}" method="POST" role="form" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 

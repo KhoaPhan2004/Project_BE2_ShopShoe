@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::y8wm51zu5n8vW4VM',
+            '_route' => 'generated::T7aEpTBc7il42Q2s',
           ),
           1 => NULL,
           2 => 
@@ -159,7 +159,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
+<<<<<<< HEAD
             '_route' => 'generated::oscheiNzdjhBx6cU',
+=======
+            '_route' => 'generated::Z6Jiz5ye3jLmyFSi',
+>>>>>>> laravel-10x/13-PhanQuyen
           ),
           1 => NULL,
           2 => 
@@ -195,7 +199,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
+<<<<<<< HEAD
             '_route' => 'generated::CPkTWJZhWSh3QipZ',
+=======
+            '_route' => 'generated::pTKoWe0SC4rP77PD',
+>>>>>>> laravel-10x/13-PhanQuyen
           ),
           1 => NULL,
           2 => 
@@ -291,7 +299,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
+<<<<<<< HEAD
             '_route' => 'generated::h1DNENrSF0QpGbWR',
+=======
+            '_route' => 'generated::iSCvcFQ8WwvwJ0TR',
+>>>>>>> laravel-10x/13-PhanQuyen
           ),
           1 => NULL,
           2 => 
@@ -330,7 +342,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
+<<<<<<< HEAD
             '_route' => 'generated::PCj41XwURRJ7l8rQ',
+=======
+            '_route' => 'generated::1nX3w0I1Z0oJ6Z5V',
+>>>>>>> laravel-10x/13-PhanQuyen
           ),
           1 => NULL,
           2 => 
@@ -367,7 +383,11 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
+<<<<<<< HEAD
             '_route' => 'generated::kJA5cIzHsIht7sMr',
+=======
+            '_route' => 'generated::zNJB4GfQZA7El8Xj',
+>>>>>>> laravel-10x/13-PhanQuyen
           ),
           1 => NULL,
           2 => 
@@ -400,13 +420,53 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/admin/error' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.error',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/admin' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'admin.index',
+            '_route' => 'admin.admin.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/admin/statistics' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.admin.statistics',
           ),
           1 => NULL,
           2 => 
@@ -446,7 +506,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'brand.index',
+            '_route' => 'admin.brand.index',
           ),
           1 => NULL,
           2 => 
@@ -463,7 +523,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'brand.store',
+            '_route' => 'admin.brand.store',
           ),
           1 => NULL,
           2 => 
@@ -482,7 +542,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'brand.create',
+            '_route' => 'admin.brand.create',
           ),
           1 => NULL,
           2 => 
@@ -502,7 +562,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'origin.index',
+            '_route' => 'admin.origin.index',
           ),
           1 => NULL,
           2 => 
@@ -519,7 +579,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'origin.store',
+            '_route' => 'admin.origin.store',
           ),
           1 => NULL,
           2 => 
@@ -538,7 +598,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'origin.create',
+            '_route' => 'admin.origin.create',
           ),
           1 => NULL,
           2 => 
@@ -558,7 +618,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'product.index',
+            '_route' => 'admin.product.index',
           ),
           1 => NULL,
           2 => 
@@ -575,7 +635,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'product.store',
+            '_route' => 'admin.product.store',
           ),
           1 => NULL,
           2 => 
@@ -594,7 +654,119 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'product.create',
+            '_route' => 'admin.product.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/role' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.role.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.role.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/role/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.role.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/user' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/user/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.create',
           ),
           1 => NULL,
           2 => 
@@ -611,7 +783,11 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
+<<<<<<< HEAD
       0 => '{^(?|/product/([^/]++)(*:24)|/brand/([^/]++)(*:46)|/cart/(?|add/([^/]++)(*:74)|delete/([^/]++)(*:96)|update/([^/]++)(*:118))|/admin/(?|product(?|s/sort/([^/]++)(*:162)|/([^/]++)(?|(*:182)|/edit(*:195)|(*:203)))|brand/([^/]++)(?|(*:230)|/edit(*:243)|(*:251))|origin/([^/]++)(?|(*:278)|/edit(*:291)|(*:299))))/?$}sDu',
+=======
+      0 => '{^(?|/cart/(?|add/([^/]++)(*:28)|delete/([^/]++)(*:50)|update/([^/]++)(*:72))|/admin/(?|product(?|s/sort/([^/]++)(*:115)|/([^/]++)(?|(*:135)|/edit(*:148)|(*:156)))|brand/([^/]++)(?|(*:183)|/edit(*:196)|(*:204))|origin/([^/]++)(?|(*:231)|/edit(*:244)|(*:252))|role/([^/]++)(?|(*:277)|/edit(*:290)|(*:298))|user/([^/]++)(?|(*:323)|/edit(*:336)|(*:344))))/?$}sDu',
+>>>>>>> laravel-10x/13-PhanQuyen
     ),
     3 => 
     array (
@@ -736,7 +912,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'products.sort',
+            '_route' => 'admin.products.sort',
           ),
           1 => 
           array (
@@ -759,7 +935,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'product.show',
+            '_route' => 'admin.product.show',
           ),
           1 => 
           array (
@@ -782,7 +958,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'product.edit',
+            '_route' => 'admin.product.edit',
           ),
           1 => 
           array (
@@ -805,7 +981,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'product.update',
+            '_route' => 'admin.product.update',
           ),
           1 => 
           array (
@@ -825,7 +1001,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'product.destroy',
+            '_route' => 'admin.product.destroy',
           ),
           1 => 
           array (
@@ -847,7 +1023,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'brand.show',
+            '_route' => 'admin.brand.show',
           ),
           1 => 
           array (
@@ -870,7 +1046,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'brand.edit',
+            '_route' => 'admin.brand.edit',
           ),
           1 => 
           array (
@@ -893,7 +1069,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'brand.update',
+            '_route' => 'admin.brand.update',
           ),
           1 => 
           array (
@@ -913,7 +1089,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'brand.destroy',
+            '_route' => 'admin.brand.destroy',
           ),
           1 => 
           array (
@@ -935,7 +1111,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'origin.show',
+            '_route' => 'admin.origin.show',
           ),
           1 => 
           array (
@@ -958,7 +1134,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'origin.edit',
+            '_route' => 'admin.origin.edit',
           ),
           1 => 
           array (
@@ -981,7 +1157,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'origin.update',
+            '_route' => 'admin.origin.update',
           ),
           1 => 
           array (
@@ -1001,11 +1177,187 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'origin.destroy',
+            '_route' => 'admin.origin.destroy',
           ),
           1 => 
           array (
             0 => 'origin',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      277 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.role.show',
+          ),
+          1 => 
+          array (
+            0 => 'role',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      290 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.role.edit',
+          ),
+          1 => 
+          array (
+            0 => 'role',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      298 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.role.update',
+          ),
+          1 => 
+          array (
+            0 => 'role',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.role.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'role',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      323 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.show',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      336 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.edit',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      344 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.update',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'user',
           ),
           2 => 
           array (
@@ -1178,7 +1530,11 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+<<<<<<< HEAD
     'generated::y8wm51zu5n8vW4VM' => 
+=======
+    'generated::T7aEpTBc7il42Q2s' => 
+>>>>>>> laravel-10x/13-PhanQuyen
     array (
       'methods' => 
       array (
@@ -1195,13 +1551,21 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:55:"Laravel\\SerializableClosure\\UnsignedSerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
+<<<<<<< HEAD
 }";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000005100000000000000000";}}',
+=======
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000005190000000000000000";}}',
+>>>>>>> laravel-10x/13-PhanQuyen
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
+<<<<<<< HEAD
         'as' => 'generated::y8wm51zu5n8vW4VM',
+=======
+        'as' => 'generated::T7aEpTBc7il42Q2s',
+>>>>>>> laravel-10x/13-PhanQuyen
       ),
       'fallback' => false,
       'defaults' => 
@@ -1365,7 +1729,11 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+<<<<<<< HEAD
     'generated::oscheiNzdjhBx6cU' => 
+=======
+    'generated::Z6Jiz5ye3jLmyFSi' => 
+>>>>>>> laravel-10x/13-PhanQuyen
     array (
       'methods' => 
       array (
@@ -1385,7 +1753,11 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
+<<<<<<< HEAD
         'as' => 'generated::oscheiNzdjhBx6cU',
+=======
+        'as' => 'generated::Z6Jiz5ye3jLmyFSi',
+>>>>>>> laravel-10x/13-PhanQuyen
       ),
       'fallback' => false,
       'defaults' => 
@@ -1438,7 +1810,11 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+<<<<<<< HEAD
     'generated::CPkTWJZhWSh3QipZ' => 
+=======
+    'generated::pTKoWe0SC4rP77PD' => 
+>>>>>>> laravel-10x/13-PhanQuyen
     array (
       'methods' => 
       array (
@@ -1458,6 +1834,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
+<<<<<<< HEAD
         'as' => 'generated::CPkTWJZhWSh3QipZ',
       ),
       'fallback' => false,
@@ -1496,6 +1873,9 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'logout',
+=======
+        'as' => 'generated::pTKoWe0SC4rP77PD',
+>>>>>>> laravel-10x/13-PhanQuyen
       ),
       'fallback' => false,
       'defaults' => 
@@ -1777,7 +2157,11 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+<<<<<<< HEAD
     'generated::h1DNENrSF0QpGbWR' => 
+=======
+    'generated::iSCvcFQ8WwvwJ0TR' => 
+>>>>>>> laravel-10x/13-PhanQuyen
     array (
       'methods' => 
       array (
@@ -1798,7 +2182,11 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
+<<<<<<< HEAD
         'as' => 'generated::h1DNENrSF0QpGbWR',
+=======
+        'as' => 'generated::iSCvcFQ8WwvwJ0TR',
+>>>>>>> laravel-10x/13-PhanQuyen
       ),
       'fallback' => false,
       'defaults' => 
@@ -1814,7 +2202,11 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+<<<<<<< HEAD
     'generated::PCj41XwURRJ7l8rQ' => 
+=======
+    'generated::1nX3w0I1Z0oJ6Z5V' => 
+>>>>>>> laravel-10x/13-PhanQuyen
     array (
       'methods' => 
       array (
@@ -1835,7 +2227,11 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
+<<<<<<< HEAD
         'as' => 'generated::PCj41XwURRJ7l8rQ',
+=======
+        'as' => 'generated::1nX3w0I1Z0oJ6Z5V',
+>>>>>>> laravel-10x/13-PhanQuyen
       ),
       'fallback' => false,
       'defaults' => 
@@ -1888,7 +2284,11 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+<<<<<<< HEAD
     'generated::kJA5cIzHsIht7sMr' => 
+=======
+    'generated::zNJB4GfQZA7El8Xj' => 
+>>>>>>> laravel-10x/13-PhanQuyen
     array (
       'methods' => 
       array (
@@ -1908,7 +2308,11 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
+<<<<<<< HEAD
         'as' => 'generated::kJA5cIzHsIht7sMr',
+=======
+        'as' => 'generated::zNJB4GfQZA7El8Xj',
+>>>>>>> laravel-10x/13-PhanQuyen
       ),
       'fallback' => false,
       'defaults' => 
@@ -1961,7 +2365,44 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'admin.index' => 
+    'admin.error' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/error',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\AdminController@error',
+        'controller' => 'App\\Http\\Controllers\\AdminController@error',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'admin.error',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.admin.index' => 
     array (
       'methods' => 
       array (
@@ -1978,12 +2419,12 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\AdminController@index',
         'controller' => 'App\\Http\\Controllers\\AdminController@index',
+        'as' => 'admin.admin.index',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
         array (
         ),
-        'as' => 'admin.index',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1999,7 +2440,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'products.sort' => 
+    'admin.products.sort' => 
     array (
       'methods' => 
       array (
@@ -2016,12 +2457,12 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\ProductController@sort',
         'controller' => 'App\\Http\\Controllers\\ProductController@sort',
+        'as' => 'admin.products.sort',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
         array (
         ),
-        'as' => 'products.sort',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2037,7 +2478,11 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+<<<<<<< HEAD
     'admin.statistics' => 
+=======
+    'admin.admin.statistics' => 
+>>>>>>> laravel-10x/13-PhanQuyen
     array (
       'methods' => 
       array (
@@ -2054,12 +2499,19 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\AdminController@statistics',
         'controller' => 'App\\Http\\Controllers\\AdminController@statistics',
+<<<<<<< HEAD
+=======
+        'as' => 'admin.admin.statistics',
+>>>>>>> laravel-10x/13-PhanQuyen
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
         array (
         ),
+<<<<<<< HEAD
         'as' => 'admin.statistics',
+=======
+>>>>>>> laravel-10x/13-PhanQuyen
       ),
       'fallback' => false,
       'defaults' => 
@@ -2075,7 +2527,11 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+<<<<<<< HEAD
     'brand.index' => 
+=======
+    'admin.brand.index' => 
+>>>>>>> laravel-10x/13-PhanQuyen
     array (
       'methods' => 
       array (
@@ -2090,7 +2546,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'brand.index',
+        'as' => 'admin.brand.index',
         'uses' => 'App\\Http\\Controllers\\BrandController@index',
         'controller' => 'App\\Http\\Controllers\\BrandController@index',
         'namespace' => NULL,
@@ -2113,7 +2569,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'brand.create' => 
+    'admin.brand.create' => 
     array (
       'methods' => 
       array (
@@ -2128,7 +2584,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'brand.create',
+        'as' => 'admin.brand.create',
         'uses' => 'App\\Http\\Controllers\\BrandController@create',
         'controller' => 'App\\Http\\Controllers\\BrandController@create',
         'namespace' => NULL,
@@ -2151,7 +2607,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'brand.store' => 
+    'admin.brand.store' => 
     array (
       'methods' => 
       array (
@@ -2165,7 +2621,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'brand.store',
+        'as' => 'admin.brand.store',
         'uses' => 'App\\Http\\Controllers\\BrandController@store',
         'controller' => 'App\\Http\\Controllers\\BrandController@store',
         'namespace' => NULL,
@@ -2188,7 +2644,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'brand.show' => 
+    'admin.brand.show' => 
     array (
       'methods' => 
       array (
@@ -2203,7 +2659,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'brand.show',
+        'as' => 'admin.brand.show',
         'uses' => 'App\\Http\\Controllers\\BrandController@show',
         'controller' => 'App\\Http\\Controllers\\BrandController@show',
         'namespace' => NULL,
@@ -2226,7 +2682,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'brand.edit' => 
+    'admin.brand.edit' => 
     array (
       'methods' => 
       array (
@@ -2241,7 +2697,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'brand.edit',
+        'as' => 'admin.brand.edit',
         'uses' => 'App\\Http\\Controllers\\BrandController@edit',
         'controller' => 'App\\Http\\Controllers\\BrandController@edit',
         'namespace' => NULL,
@@ -2264,7 +2720,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'brand.update' => 
+    'admin.brand.update' => 
     array (
       'methods' => 
       array (
@@ -2279,7 +2735,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'brand.update',
+        'as' => 'admin.brand.update',
         'uses' => 'App\\Http\\Controllers\\BrandController@update',
         'controller' => 'App\\Http\\Controllers\\BrandController@update',
         'namespace' => NULL,
@@ -2302,7 +2758,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'brand.destroy' => 
+    'admin.brand.destroy' => 
     array (
       'methods' => 
       array (
@@ -2316,7 +2772,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'brand.destroy',
+        'as' => 'admin.brand.destroy',
         'uses' => 'App\\Http\\Controllers\\BrandController@destroy',
         'controller' => 'App\\Http\\Controllers\\BrandController@destroy',
         'namespace' => NULL,
@@ -2339,7 +2795,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'origin.index' => 
+    'admin.origin.index' => 
     array (
       'methods' => 
       array (
@@ -2354,7 +2810,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'origin.index',
+        'as' => 'admin.origin.index',
         'uses' => 'App\\Http\\Controllers\\OriginController@index',
         'controller' => 'App\\Http\\Controllers\\OriginController@index',
         'namespace' => NULL,
@@ -2377,7 +2833,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'origin.create' => 
+    'admin.origin.create' => 
     array (
       'methods' => 
       array (
@@ -2392,7 +2848,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'origin.create',
+        'as' => 'admin.origin.create',
         'uses' => 'App\\Http\\Controllers\\OriginController@create',
         'controller' => 'App\\Http\\Controllers\\OriginController@create',
         'namespace' => NULL,
@@ -2415,7 +2871,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'origin.store' => 
+    'admin.origin.store' => 
     array (
       'methods' => 
       array (
@@ -2429,7 +2885,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'origin.store',
+        'as' => 'admin.origin.store',
         'uses' => 'App\\Http\\Controllers\\OriginController@store',
         'controller' => 'App\\Http\\Controllers\\OriginController@store',
         'namespace' => NULL,
@@ -2452,7 +2908,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'origin.show' => 
+    'admin.origin.show' => 
     array (
       'methods' => 
       array (
@@ -2467,7 +2923,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'origin.show',
+        'as' => 'admin.origin.show',
         'uses' => 'App\\Http\\Controllers\\OriginController@show',
         'controller' => 'App\\Http\\Controllers\\OriginController@show',
         'namespace' => NULL,
@@ -2490,7 +2946,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'origin.edit' => 
+    'admin.origin.edit' => 
     array (
       'methods' => 
       array (
@@ -2505,7 +2961,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'origin.edit',
+        'as' => 'admin.origin.edit',
         'uses' => 'App\\Http\\Controllers\\OriginController@edit',
         'controller' => 'App\\Http\\Controllers\\OriginController@edit',
         'namespace' => NULL,
@@ -2528,7 +2984,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'origin.update' => 
+    'admin.origin.update' => 
     array (
       'methods' => 
       array (
@@ -2543,7 +2999,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'origin.update',
+        'as' => 'admin.origin.update',
         'uses' => 'App\\Http\\Controllers\\OriginController@update',
         'controller' => 'App\\Http\\Controllers\\OriginController@update',
         'namespace' => NULL,
@@ -2566,7 +3022,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'origin.destroy' => 
+    'admin.origin.destroy' => 
     array (
       'methods' => 
       array (
@@ -2580,7 +3036,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'origin.destroy',
+        'as' => 'admin.origin.destroy',
         'uses' => 'App\\Http\\Controllers\\OriginController@destroy',
         'controller' => 'App\\Http\\Controllers\\OriginController@destroy',
         'namespace' => NULL,
@@ -2603,7 +3059,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'product.index' => 
+    'admin.product.index' => 
     array (
       'methods' => 
       array (
@@ -2618,7 +3074,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'product.index',
+        'as' => 'admin.product.index',
         'uses' => 'App\\Http\\Controllers\\ProductController@index',
         'controller' => 'App\\Http\\Controllers\\ProductController@index',
         'namespace' => NULL,
@@ -2641,7 +3097,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'product.create' => 
+    'admin.product.create' => 
     array (
       'methods' => 
       array (
@@ -2656,7 +3112,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'product.create',
+        'as' => 'admin.product.create',
         'uses' => 'App\\Http\\Controllers\\ProductController@create',
         'controller' => 'App\\Http\\Controllers\\ProductController@create',
         'namespace' => NULL,
@@ -2679,7 +3135,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'product.store' => 
+    'admin.product.store' => 
     array (
       'methods' => 
       array (
@@ -2693,7 +3149,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'product.store',
+        'as' => 'admin.product.store',
         'uses' => 'App\\Http\\Controllers\\ProductController@store',
         'controller' => 'App\\Http\\Controllers\\ProductController@store',
         'namespace' => NULL,
@@ -2716,7 +3172,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'product.show' => 
+    'admin.product.show' => 
     array (
       'methods' => 
       array (
@@ -2731,7 +3187,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'product.show',
+        'as' => 'admin.product.show',
         'uses' => 'App\\Http\\Controllers\\ProductController@show',
         'controller' => 'App\\Http\\Controllers\\ProductController@show',
         'namespace' => NULL,
@@ -2754,7 +3210,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'product.edit' => 
+    'admin.product.edit' => 
     array (
       'methods' => 
       array (
@@ -2769,7 +3225,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'product.edit',
+        'as' => 'admin.product.edit',
         'uses' => 'App\\Http\\Controllers\\ProductController@edit',
         'controller' => 'App\\Http\\Controllers\\ProductController@edit',
         'namespace' => NULL,
@@ -2792,7 +3248,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'product.update' => 
+    'admin.product.update' => 
     array (
       'methods' => 
       array (
@@ -2807,7 +3263,7 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'product.update',
+        'as' => 'admin.product.update',
         'uses' => 'App\\Http\\Controllers\\ProductController@update',
         'controller' => 'App\\Http\\Controllers\\ProductController@update',
         'namespace' => NULL,
@@ -2830,7 +3286,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'product.destroy' => 
+    'admin.product.destroy' => 
     array (
       'methods' => 
       array (
@@ -2844,9 +3300,537 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth',
         ),
-        'as' => 'product.destroy',
+        'as' => 'admin.product.destroy',
         'uses' => 'App\\Http\\Controllers\\ProductController@destroy',
         'controller' => 'App\\Http\\Controllers\\ProductController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.role.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/role',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.role.index',
+        'uses' => 'App\\Http\\Controllers\\RoleController@index',
+        'controller' => 'App\\Http\\Controllers\\RoleController@index',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.role.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/role/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.role.create',
+        'uses' => 'App\\Http\\Controllers\\RoleController@create',
+        'controller' => 'App\\Http\\Controllers\\RoleController@create',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.role.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/role',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.role.store',
+        'uses' => 'App\\Http\\Controllers\\RoleController@store',
+        'controller' => 'App\\Http\\Controllers\\RoleController@store',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.role.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/role/{role}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.role.show',
+        'uses' => 'App\\Http\\Controllers\\RoleController@show',
+        'controller' => 'App\\Http\\Controllers\\RoleController@show',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.role.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/role/{role}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.role.edit',
+        'uses' => 'App\\Http\\Controllers\\RoleController@edit',
+        'controller' => 'App\\Http\\Controllers\\RoleController@edit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.role.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/role/{role}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.role.update',
+        'uses' => 'App\\Http\\Controllers\\RoleController@update',
+        'controller' => 'App\\Http\\Controllers\\RoleController@update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.role.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/role/{role}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.role.destroy',
+        'uses' => 'App\\Http\\Controllers\\RoleController@destroy',
+        'controller' => 'App\\Http\\Controllers\\RoleController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/user',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.user.index',
+        'uses' => 'App\\Http\\Controllers\\UserController@index',
+        'controller' => 'App\\Http\\Controllers\\UserController@index',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/user/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.user.create',
+        'uses' => 'App\\Http\\Controllers\\UserController@create',
+        'controller' => 'App\\Http\\Controllers\\UserController@create',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/user',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.user.store',
+        'uses' => 'App\\Http\\Controllers\\UserController@store',
+        'controller' => 'App\\Http\\Controllers\\UserController@store',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/user/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.user.show',
+        'uses' => 'App\\Http\\Controllers\\UserController@show',
+        'controller' => 'App\\Http\\Controllers\\UserController@show',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/user/{user}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.user.edit',
+        'uses' => 'App\\Http\\Controllers\\UserController@edit',
+        'controller' => 'App\\Http\\Controllers\\UserController@edit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/user/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.user.update',
+        'uses' => 'App\\Http\\Controllers\\UserController@update',
+        'controller' => 'App\\Http\\Controllers\\UserController@update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/user/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'admin.user.destroy',
+        'uses' => 'App\\Http\\Controllers\\UserController@destroy',
+        'controller' => 'App\\Http\\Controllers\\UserController@destroy',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 
