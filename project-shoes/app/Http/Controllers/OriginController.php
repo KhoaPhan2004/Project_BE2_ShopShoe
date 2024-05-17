@@ -46,7 +46,7 @@ class OriginController extends Controller
         Origin::create($data);
 
 
-        return redirect()->route('origin.index')->with('success', 'Thêm thành công');
+        return redirect()->route('admin.origin.index')->with('success', 'Thêm thành công');
     }
 
     /**
@@ -81,7 +81,7 @@ class OriginController extends Controller
         $origin->update($data);
 
 
-        return redirect()->route('origin.index')->with('success', 'Sửa thành công');
+        return redirect()->route('admin.origin.index')->with('success', 'Sửa thành công');
     }
 
     /**
@@ -90,6 +90,6 @@ class OriginController extends Controller
     public function destroy(Origin $origin)
     {
         $origin->delete();
-        return redirect()->route('origin.index')->with('success', 'Xóa thành công');
+        return redirect()->route('admin.origin.index')->with('success', 'Xóa thành công');
     }
 }

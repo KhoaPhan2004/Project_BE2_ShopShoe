@@ -372,6 +372,21 @@
       ),
     ),
   ),
+  'error' => 
+  array (
+    404 => 
+    array (
+      'code' => 404,
+      'title' => 'Not found',
+      'message' => 'Pager does not exist...!',
+    ),
+    403 => 
+    array (
+      'code' => 403,
+      'title' => 'Unauthorized',
+      'message' => 'Unauthorized...!',
+    ),
+  ),
   'filesystems' => 
   array (
     'default' => 'local',
