@@ -127,13 +127,27 @@ class OrderController extends Controller
     {
         // Tìm đơn hàng bằng ID
         $order = Order::findOrFail($id);
-
-        // Xóa các chi tiết đơn hàng liên quan
-        OrderDetails::where('order_id', $id)->delete();
-
+    
         // Xóa đơn hàng
         $order->delete();
-
+    
         return redirect()->route('order.index')->with('success', 'Order deleted successfully.');
+    }
+    public function delete($id)
+    {
+        // Tìm đơn hàng bằng ID
+        $order = Order::findOrFail($id);
+    
+        // Lấy userId từ đơn hàng
+        $userId = $order->user_id;
+    
+        // Xóa tất cả các chi tiết đơn hàng liên quan
+        $order->orderDetails()->delete();
+    
+        // Xóa đơn hàng
+        $order->delete();
+    
+        // Chuyển hướng đến route order/{userId} với tham số userId
+        return redirect()->route('order.showOrderDetails', ['userId' => $userId])->with('success', 'Order deleted successfully.');
     }
 }

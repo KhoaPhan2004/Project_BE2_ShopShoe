@@ -118,8 +118,7 @@
             <td>{{ $orderDetail->total_amount }}</td>
             <td>
                 @if ($orderDetail->status != 'cancelled')
-                <form action="{{ route('order.destroy', $orderDetail->order_id) }}" method="post"
-                 onsubmit="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này?');">
+                <form action="{{ route('order.delete', $orderDetail->order_id) }}" method="POST" onsubmit="return confirm('Bạn có chắc chắn muốn hủy đơn hàng này?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit"><i class="fa-solid fa-plus"></i></button>

@@ -48,7 +48,10 @@ Route::get('/order/{id}', [OrderController::class, 'showOrderDetails']);
 Route::get('/order/{userId}', [OrderController::class, 'showOrderDetails']);
 Route::post('/order/{orderId}/edit', [OrderController::class, 'editOrder']);
 Route::post('/order/{orderId}/delete', [OrderController::class, 'deleteOrder']);
+Route::delete('/order/{id}', [OrderController::class, 'delete'])->name('order.delete');
+Route::get('/order/{userId}', [OrderController::class, 'showOrderDetails'])->name('order.showOrderDetails');
 
+Route::post('/order/{orderId}/delete', [OrderController::class, 'deleteOrder']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
