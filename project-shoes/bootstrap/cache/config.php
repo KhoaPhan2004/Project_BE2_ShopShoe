@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:qgVkb+jBl+r0xbhuikmRMDklxxAsj7UEIRX9y1d83ks=',
+    'key' => 'base64:U5YFfyMuEBqUDNETLe1idoJHVDld0vzDRZk3lWQzR5A=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -207,7 +207,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\storage\\framework/cache/data',
+        'path' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -290,7 +290,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'laravel',
+        'database' => 'shoes',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -300,7 +300,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'laravel',
+        'database' => 'shoes',
         'username' => 'root',
         'password' => '',
         'unix_socket' => '',
@@ -320,7 +320,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'laravel',
+        'database' => 'shoes',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -335,7 +335,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'laravel',
+        'database' => 'shoes',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -395,13 +395,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\storage\\app',
+        'root' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\storage\\app/public',
+        'root' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -421,7 +421,7 @@
     ),
     'links' => 
     array (
-      'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\public\\storage' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\storage\\app/public',
+      'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\public\\storage' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -460,13 +460,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\storage\\logs/laravel.log',
+        'path' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\storage\\logs/laravel.log',
+        'path' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -518,7 +518,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\storage\\logs/laravel.log',
+        'path' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -584,7 +584,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\resources\\views/vendor/mail',
+        0 => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -691,7 +691,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\storage\\framework/sessions',
+    'files' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -711,9 +711,9 @@
   array (
     'paths' => 
     array (
-      0 => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\resources\\views',
+      0 => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\resources\\views',
     ),
-    'compiled' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes\\storage\\framework\\views',
+    'compiled' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -799,7 +799,7 @@
     array (
     ),
     'enable_runnable_solutions' => NULL,
-    'remote_sites_path' => 'D:\\HOCTAP\\BE2\\DOAN\\Project_BE2_ShopShoe\\project-shoes',
+    'remote_sites_path' => 'D:\\tailieuweb\\Project_BE2_ShopShoe\\project-shoes',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

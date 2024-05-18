@@ -108,9 +108,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show($id)
     {
-       //
+        $product = Product::with('comments')->findOrFail($id);
+        return view('details', compact('product'));
     }
 
     /**

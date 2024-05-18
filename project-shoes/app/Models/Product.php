@@ -21,5 +21,9 @@ class Product extends Model
     public function orderDetails()
     {
         return $this->hasMany(OrderDetail::class);
-    }   
+    }
+     public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
