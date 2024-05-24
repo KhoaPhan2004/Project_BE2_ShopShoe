@@ -361,7 +361,7 @@
                 <i class="fa-solid fa-rotate-left"></i>
                 <h3>Hoàn Trả Trong 10 Ngày</h3>
                 <p>
-                Shoes cam kết chính sách hoàn trả sản phẩm trong vòng 10 ngày để đảm bảo sự hài lòng tuyệt đối của khách hàng.
+                    Shoes cam kết chính sách hoàn trả sản phẩm trong vòng 10 ngày để đảm bảo sự hài lòng tuyệt đối của khách hàng.
                 </p>
             </div>
 
@@ -369,7 +369,7 @@
                 <i class="fa-solid fa-headset"></i>
                 <h3>Hỗ Trợ 24/7</h3>
                 <p>
-                Shoes cung cấp dịch vụ hỗ trợ khách hàng 24/7, luôn sẵn sàng giải đáp mọi thắc mắc và nhu cầu của bạn.                </p>
+                    Shoes cung cấp dịch vụ hỗ trợ khách hàng 24/7, luôn sẵn sàng giải đáp mọi thắc mắc và nhu cầu của bạn. </p>
             </div>
         </div>
 
@@ -420,9 +420,26 @@
     <!--Footer-->
 
 
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
 
+            var keyword = document.querySelector('input[name="keyword"]').value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/search?keyword=" + keyword, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+
+                    document.getElementById("Products").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        });
+    </script>
 
 </body>
 
 </html>
+
 @stop()

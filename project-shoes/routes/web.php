@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 use App\Models\Brands;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\SearchController;
 
 use App\Models\Customer;
 /*
@@ -37,6 +38,7 @@ Route::group(['prefix' => ''], function () {
   
     
 });
+Route::get('/search', [SearchController::class, 'search']);
 
   //comments
   Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
