@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nike - Just Do It</title>
+    <title>Shoes Shop</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('image/logo.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -57,7 +57,8 @@
 
                 <div class="icons">
                     <i class="fa-solid fa-heart"></i>
-                    <i class="fa-solid fa-cart-shopping"></i>
+                    <a href="{{ route('cart.view') }}"><i class="fa-solid fa-cart-shopping"></i>
+                    </a>
                     <div class="dropdown-icon">
                         <i class="fa-solid fa-user"></i>
                         <div class="dropdown-content-icon">
@@ -87,7 +88,7 @@
             <div class="footer_main">
                 <div class="tag">
                     <h1>Contact</h1>
-                    <a href="#"><i class="fa-solid fa-house"></i>123/Colombo/Sri Lanka</a>
+                    <a href="#"><i class="fa-solid fa-house"></i>52/3 đường làng tăng Phú, Tăng Nhơn Phú A, Thành Phố Thủ Đức, TP Hồ Chí Minh</a>
                     <a href="#"><i class="fa-solid fa-phone"></i>+84 42779848</a>
                     <a href="#"><i class="fa-solid fa-envelope"></i>huynhvietcanh2004@gmail.com</a>
                 </div>
@@ -111,7 +112,7 @@
                 <div class="tag">
                     <h1>Follw Us</h1>
                     <div class="social_link">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/viet.canh.2206"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>

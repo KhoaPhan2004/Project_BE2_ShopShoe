@@ -23,12 +23,11 @@
         <div class="main" id="Home">
             <div class="main_content">
                 <div class="main_text">
-                    <h1>NIKE<br><span>Collection</span></h1>
+                    <h1>NIKE<br><span>Bộ Sưu Tập</span></h1>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                        a galley of type and scrambled it to make a type specimen book. It has survived not only
-                        five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        Chào mừng đến với Shoes - thiên đường dành cho những người yêu thích giày!
+
+                        Shoes tự hào là một trong những cửa hàng giày uy tín và đáng tin cậy nhất, mang đến cho khách hàng những sản phẩm giày chất lượng và phong cách thời trang đẳng cấp. Với nhiều năm kinh nghiệm trong lĩnh vực kinh doanh giày dép, chúng tôi hiểu rằng mỗi bước đi của bạn đều quan trọng, và vì thế, chúng tôi luôn nỗ lực để mang đến những đôi giày hoàn hảo nhất.
                     </p>
                 </div>
                 <div class="main_image">
@@ -42,7 +41,7 @@
                 <i class="fa-brands fa-linkedin-in"></i>
             </div> -->
             <div class="button">
-                <a href="#">SHOP NOW</a>
+                <a href="#">Mua Ngay Bây Giờ</a>
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
         </div>
@@ -53,7 +52,7 @@
     <!--Products-->
 
     <div class="products" id="Products">
-        <h1>Products</h1>
+        <h1>Sản Phẩm</h1>
 
         <div class="box">
             <!-- resources/views/index.blade.php -->
@@ -86,7 +85,7 @@
 
     <div class="about" id="About">
 
-        <h1>Web<span>About</span></h1>
+        <h1>Thông Tin về <span>Shoes</span></h1>
 
         <div class="about_main">
             <div class="about_image">
@@ -105,22 +104,25 @@
 
             <div class="about_text">
                 <p>
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical
-                    Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                    Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a
-                    Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
-                    undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
-                    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
-                    very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes
-                    from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
-                    for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-                    reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                    Chào mừng đến với Shoes - thiên đường dành cho những người yêu thích giày!
+
+                    Shoes tự hào là một trong những cửa hàng giày uy tín và đáng tin cậy nhất, mang đến cho khách hàng những sản phẩm giày chất lượng và phong cách thời trang đẳng cấp. Với nhiều năm kinh nghiệm trong lĩnh vực kinh doanh giày dép, chúng tôi hiểu rằng mỗi bước đi của bạn đều quan trọng, và vì thế, chúng tôi luôn nỗ lực để mang đến những đôi giày hoàn hảo nhất.
+
+                    Tại Shoes, bạn sẽ tìm thấy một bộ sưu tập giày đa dạng, từ giày thể thao năng động, giày công sở thanh lịch đến giày thời trang cá tính. Chúng tôi cung cấp các sản phẩm từ những thương hiệu nổi tiếng và được ưa chuộng trên toàn thế giới, đảm bảo chất lượng và độ bền cao. Bất kể bạn là ai, làm gì hay sở thích cá nhân của bạn là gì, Shoes đều có đôi giày phù hợp dành cho bạn.
+
+                    Chúng tôi hiểu rằng giày không chỉ là một món đồ thời trang mà còn là người bạn đồng hành quan trọng trong cuộc sống hàng ngày. Vì vậy, Shoes cam kết mang đến cho bạn những sản phẩm chất lượng nhất với giá cả hợp lý. Đội ngũ nhân viên của chúng tôi luôn sẵn sàng tư vấn và hỗ trợ bạn chọn lựa đôi giày phù hợp nhất, mang lại trải nghiệm mua sắm tuyệt vời và đáng nhớ.
+
+                    Shoes không ngừng cải tiến và phát triển hệ thống cửa hàng cũng như kênh mua sắm trực tuyến, giúp bạn dễ dàng tiếp cận và lựa chọn sản phẩm một cách nhanh chóng và tiện lợi. Bạn có thể ghé thăm cửa hàng của chúng tôi để trực tiếp thử giày và cảm nhận sự thoải mái, hoặc mua sắm online với dịch vụ giao hàng nhanh chóng và chính xác.
+
+                    Hãy đến với Shoes và trải nghiệm sự khác biệt! Chúng tôi hân hạnh được đồng hành cùng bạn trên mọi bước đường.
+
+                    Shoes - Nâng niu từng bước chân của bạn.
                 </p>
             </div>
 
         </div>
 
-        <a href="#" class="about_btn">Shop Now</a>
+        <a href="#" class="about_btn">Mua Ngay</a>
 
         <script>
             function functio(small) {
@@ -136,7 +138,7 @@
     <!--Review-->
 
     <div class="review" id="Review">
-        <h1>customers say about shoes!<span>review</span></h1>
+        <h1>Những Nhận Xét Từ Khách Hàng<span>Shoes</span></h1>
         <h1>
             #FEEDBACK
         </h1>
@@ -345,31 +347,29 @@
     <!--Services-->
 
     <div class="services" id="Servises">
-        <h1>our<span>services</span></h1>
+        <h1>Dịch Vụ<span>Của Chúng Tôi</span></h1>
 
         <div class="services_cards">
             <div class="services_box">
                 <i class="fa-solid fa-truck-fast"></i>
-                <h3>Fast Delivery</h3>
+                <h3>Chuyển Phát Nhanh</h3>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
+                    Shoes tự hào cung cấp dịch vụ chuyển phát nhanh chóng và chính xác, đảm bảo mỗi đơn hàng đến tay bạn trong thời gian sớm nhất. </p>
             </div>
 
             <div class="services_box">
                 <i class="fa-solid fa-rotate-left"></i>
-                <h3>10 Days Replacement</h3>
+                <h3>Hoàn Trả Trong 10 Ngày</h3>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Shoes cam kết chính sách hoàn trả sản phẩm trong vòng 10 ngày để đảm bảo sự hài lòng tuyệt đối của khách hàng.
                 </p>
             </div>
 
             <div class="services_box">
                 <i class="fa-solid fa-headset"></i>
-                <h3>24 x 7 Support</h3>
+                <h3>Hỗ Trợ 24/7</h3>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </p>
+                Shoes cung cấp dịch vụ hỗ trợ khách hàng 24/7, luôn sẵn sàng giải đáp mọi thắc mắc và nhu cầu của bạn.                </p>
             </div>
         </div>
 
@@ -405,7 +405,7 @@
                 <button type="submit">Login</button>
                 <div class="loging_icon">
                     <a href="#"><img src="image/google.png"></a>
-                    <a href="#"><img src="image/facebook.png"></a>
+                    <a href="https://www.facebook.com/viet.canh.2206"><img src="image/facebook.png"></a>
                     <a href="#"><img src="image/twitter.png"></a>
                 </div>
 

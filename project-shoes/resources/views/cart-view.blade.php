@@ -46,7 +46,7 @@
                         <h2>Shopping Cart</h2>
                         <div class="float-end">
                             @if($cart->totalQuantity>0)
-                            <a class="btn btn-outline-dark mt-auto" onclick="return confirm('Bạn có chắc muốn xóa tất cả không ???')" href="{{route('cart.clear')}}">Empty Cart</a>
+                            <a class="btn btn-outline-dark mt-auto" onclick="return confirm('Bạn có chắc muốn xóa tất cả không ???')" href="{{route('cart.clear')}}">Xóa tất Cả</a>
                             @endif
                         </div>
                         <table class="table" cellpadding="10" cellspacing="1">
